@@ -1,3 +1,4 @@
+<?php require("Users.php");?>
 <?php session_start();
 
 $_SESSION['prenom'] = 'Mathis';
@@ -12,7 +13,7 @@ $_SESSION['age'] = 19;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Application Sportive</title>
 </head>
 <body>
@@ -38,7 +39,7 @@ $_SESSION['age'] = 19;
 
                     <div class="menu">
                         <ul class="right">
-                            <li><b><a href="#">Cuisine</a></li></b>
+                            <li><b><a href="inscription.php">login</a></li></b>
                                 <li><b><a href="#">Score</a></li></b>
                                     <li><b><a href="#">A propos</a></li></b>
                         </ul>
@@ -48,7 +49,7 @@ $_SESSION['age'] = 19;
         </header>
     </div>
     <!-- Debut appli-->
-
+    
     <p>
         Salut <?php echo $_SESSION['prenom']; ?> !
         Bienvenue sur l'accueil de mon Application Sportive.

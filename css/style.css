@@ -9,6 +9,9 @@ body {
     margin: 0 auto;
 }
 
+
+/* header */
+
 .container {
     width: 1140px;
     margin: 0 auto;
@@ -96,4 +99,11 @@ header .presentation a {
     border-radius: 3px;
     text-transform: uppercase;
     margin-left: 450px;
+}
+
+
+/*login */
+
+label {
+    width: 50px;
 }
