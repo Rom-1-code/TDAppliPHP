@@ -11,7 +11,14 @@ class Users
         $this->_Nom = $newNom;
         $this->_Mdp = $newMdp;
     }
+    
     public function login()
     {
+
+    }
+
+    public function inscription()
+    {
+        
     }
 }
