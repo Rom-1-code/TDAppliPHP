@@ -1,7 +1,6 @@
-<?php
+<?php session_start();
 //Connexion à la base de données
-$pdo = new PDO(
-    'mysql:host=localhost;dbname=appphp', 'root', '');
+$pdo = new PDO('mysql:host=localhost; dbname=appphp; charset=utf8', 'root', '');
 
 if(isset($_POST["username"]) && isset($_POST["password"])){
 	$query = $pdo->prepare('SELECT password FROM users WHERE username = :username');

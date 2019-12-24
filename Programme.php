@@ -3,9 +3,8 @@
 class Programme
 {
 
-    private _idprog;
-    private _adressepageprog; //numero fourni par la base qui donnera accès à la page php contenant le programme sportif
-
+    private $_idprog;
+    private $_adressepageprog; //numero fourni par la base qui donnera accès à la page php contenant le programme sportif
 
 
     public function syncronisewithbase($this->_idprog)
