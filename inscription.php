@@ -43,16 +43,16 @@
 			{
 				$Base =  new PDO('mysql:host=localhost; dbname=base_sportive; charset=utf8','root','');
 			}
-			catch($error erreur)
+			catch(Exception $erreurs)
 			{
 				echo "accès à la base impossible";
 			}
 
 			try
 			{
-				$testusernamebase = $Base->query("SELECT pseudo from user where pseudo=.$_POST['username']." );
+				$testusernamebase = $Base->query("SELECT pseudo from user where pseudo=.'$_POST['username']'." );
 			}
-			catch($error erreur)
+			catch(Exception $erreur)
 			{
 				echo "le pseudo n'existe pas en base";
 				$flag = 1; //valeur qui nous indiquera si le pseudo est en base ou non, si flag existe et vaut 1 alors on peut envoyer le mdp et le username dans la base pour en faire un nouvel utilisateur

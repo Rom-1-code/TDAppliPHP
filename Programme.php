@@ -13,7 +13,7 @@ class Programme
         {
             $Base = new PDO('mysql:host=localhost; dbname=base_sportive; charset=utf8','root','');
         }
-        catch($erreur error)
+        catch(Exception $erreur)
         {
             echo "pas possible de se connecter à la base";
         }
@@ -22,7 +22,7 @@ class Programme
         {
             $Base->query("INSERT into user (id_programme) VALUES ('$this->_idprog')");
         }
-        catch($erreur error)
+        catch(Exception $erreurs)
         {
             echo "pas possible d'insérer cette valeur";
         }
@@ -31,7 +31,7 @@ class Programme
         {
             $donneesbrutes=$Base->query("SELECT adressepageprogramme from programme,user where programme.id_programme=user.id_programme");
         }
-        catch($erreur error)
+        catch(Exception $erreur)
         {
             echo "pas possible d'insérer cette valeur";
         }

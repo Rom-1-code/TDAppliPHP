@@ -20,18 +20,21 @@ class Users
 
     }
 
-    public function inscription($nom,$mdp,$imc);
+    public function inscription($nom,$mdp,$imc)
     {
         try
 		{
 			$Base =  new PDO('mysql:host=localhost; dbname=base_sportive; charset=utf8','root','');
 		}
-		catch($error erreur)
+		catch(Exception $erreur)
 		{
 			echo "accès à la base impossible";
         }
         
-        $Base->query("INSERT INTO table (pseudo,motdepasse,imc) VALUES ('.$nom.','.$mdp.','.$imc.')");
+        $Base->query("INSERT INTO table (pseudo,motdepasse,imc) VALUES ('.$nom.','.$mdp.','.$imc.')"); //insertion d'une nouvelle ligne dans la bdd
+
+        $Iduser = $Base->query("SELECT id_user from user where pseudo=.'$nom'. AND motdepasse=.'$mdp'. AND imc=.'$imc'."); //on recupère l'id de l'utilisateur qui vient d'être crée
+        $this->_Id=$Iduser;
     }
 }
 ?>
