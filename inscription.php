@@ -20,12 +20,22 @@
 		<label>Retapez mot de passe :</label>
 		<p></p>
 		<input type="password" name="password2" required />
+		<label>Votre poids : </label>
+		<p></p>
+		<input type="text" name="poids" required />
+		<p></p>
+		<label>Votre taille en cm : </label>
+		<p></p>
+		<input type="text" name="taille" required />
 		<input type="submit" />
 	</form>
 	<p></p>
 
 <?php
-	if(isset($_POST['username'])&& isset($_POST['password']) && isset($_POST['password2']))
+	$tableau_users = array(); //déclaration du tableau qui contiendra tous les utilisateurs en php
+	$indice=0;
+
+	if(isset($_POST['username'])&& isset($_POST['password']) && isset($_POST['password2']) &&  isset($_POST['poids']) &&  isset($_POST['taille']))
 	{
 		if($_POST['password'] == $_POST['password2'])
 		{
@@ -50,8 +60,14 @@
 
 			if($flag==1) //alors on peut tout rentrer en base
 			{
-				$user = new Users($_POST['username'],$_POST['password']) //je cherche un moyen d'avoir un nom de variable différent à chaque création d'objet User
-				$user->inscription($_POST['username'],$_POST['password']);
+
+				$imc=$_POST['poids']/pow($_POST['taille'],2); //calcul de l'imc à partir des données du formulaire
+				//$user = new Users($_POST['username'],$_POST['password'],$imc); //je cherche un moyen d'avoir un nom de variable différent à chaque création d'objet User
+				//$user->inscription($_POST['username'],$_POST['password'],$imc);
+				$tableau_users[$indice]= new Users($_POST['username'],$_POST['password'],$imc);
+				$tableau_users[$indice]->inscription($_POST['username'],$_POST['password'],$imc);
+				$indice++;
+				
 			}
 		}
 		
