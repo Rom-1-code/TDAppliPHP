@@ -17,7 +17,7 @@ class Users
 
     }
 
-    public function inscription()
+    public function inscription($nom,$mdp);
     {
         
     }
