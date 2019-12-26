@@ -50,8 +50,8 @@
 
 			if($flag==1) //alors on peut tout rentrer en base
 			{
-				$_POST['username'] = new Users($_POST['username'],$_POST['password']) //je cherche un moyen d'avoir un nom de variable différent à chaque création d'objet User
-				$_POST['username']->inscription($_POST['username'],$_POST['password']);
+				$user = new Users($_POST['username'],$_POST['password']) //je cherche un moyen d'avoir un nom de variable différent à chaque création d'objet User
+				$user->inscription($_POST['username'],$_POST['password']);
 			}
 		}
 		
