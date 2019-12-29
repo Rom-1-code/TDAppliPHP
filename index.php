@@ -1,4 +1,4 @@
-<?php require("Users.php");?>
+<?php require("Users.php"); ?>
 <?php session_start();
 
 $_SESSION['prenom'] = 'Mathis';
@@ -16,9 +16,10 @@ $_SESSION['age'] = 19;
     <link rel="stylesheet" href="css/style.css">
     <title>Application Sportive</title>
 </head>
+
 <body>
-     <!-- HEADER -->
-     <div class="page">
+    <!-- HEADER -->
+    <div class="page">
         <header>
             <div class="container">
                 <nav class="menu-bar">
@@ -40,20 +41,46 @@ $_SESSION['age'] = 19;
                     <div class="menu">
                         <ul class="right">
                             <li><b><a href="inscription.php">login</a></li></b>
-                                <li><b><a href="#">Score</a></li></b>
-                                    <li><b><a href="#">A propos</a></li></b>
+                            <li><b><a href="#">Score</a></li></b>
+                            <li><b><a href="#">A propos</a></li></b>
                         </ul>
                     </div>
                     <div class="clearfix"></div>
                 </nav>
         </header>
+
+        <div class="para">
+            <p>
+                Salut <?php echo $_SESSION['prenom']; ?> !
+                Bienvenue sur mon cul! Peut tu saisir ta taille et ton poids afin que je puisse calculer ton IMC ?
+            </p>
+
+            <div class="form">
+
+                <p>
+                    <h2>IMC</h2>
+                    <form action="#" method="POST">
+                        <label>Calcul de votre IMC</label>
+                        <p></p>
+                        <label>Enter votre taille:</label>
+                        <input type="text" name="taille" required />
+                        <p></p><label>Enter votre poids:</label>
+                        <input type="text" name="poids" required />
+                        <p></p>
+                        <input type="submit" value="Valider" />
+                    </form>
+                </p>
+             
+
+            </div>
+
+        </div>
+
     </div>
     <!-- Debut appli-->
-    
-    <p>
-        Salut <?php echo $_SESSION['prenom']; ?> !
-        Bienvenue sur l'accueil de mon Application Sportive.
-    </p>
+
+    <!--<h3>Votre IMC est de:</h3>
+                <h1>20.1</h1> -->
 
 </body>
 
