@@ -12,21 +12,20 @@
 	
 	<form action="inscription.php" method="POST">
 		<label>Identifiant :</label>
-		<p></p>
 		<input type="text" name="username" required />
+		<p></p>
 		<label>Mot de passe :</label>
-		<p></p>
 		<input type="password" name="password" required />
+		<p></p>
 		<label>Retapez mot de passe :</label>
-		<p></p>
 		<input type="password" name="password2" required />
-		<label>Votre poids : </label>
 		<p></p>
+		<label>Votre poids : </label>
 		<input type="text" name="poids" required />
 		<p></p>
 		<label>Votre taille en cm : </label>
-		<p></p>
 		<input type="text" name="taille" required />
+		<p></p>
 		<input type="submit" />
 	</form>
 	<p></p>
@@ -50,7 +49,9 @@
 
 			try
 			{
-				$testusernamebase = $Base->query("SELECT pseudo from user where pseudo=.'$_POST['username']'." );
+				$usernameformulaire = $_POST['username'];
+				$testusernamebase = $Base->query('SELECT pseudo from user where pseudo="'.$_POST['username'].'"');
+				
 			}
 			catch(Exception $erreur)
 			{

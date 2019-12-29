@@ -15,9 +15,16 @@ class Users
         $this->_Imc = $newimc;
     }
     
-    public function login()
+    public function login($nom,$mdp)
     {
-
+        try
+		{
+			$Base =  new PDO('mysql:host=localhost; dbname=base_sportive; charset=utf8','root','');
+		}
+		catch(Exception $erreur)
+		{
+			echo "accès à la base impossible";
+        }
     }
 
     public function inscription($nom,$mdp,$imc)
