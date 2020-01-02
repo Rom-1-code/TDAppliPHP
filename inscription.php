@@ -26,7 +26,7 @@
 		<p></p>
 		<label>Votre taille en cm : </label>
 		<input type="text" name="taille" required />
-		<p></p>
+		<p></p>*
 		<input type="submit" />
 	</form>
 	<p></p>
