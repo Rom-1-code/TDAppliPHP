@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>login</title>
+    <title>Inscription</title>
 </head>
 <?php require ("Users.php"); ?>
 <body>
@@ -30,6 +30,10 @@
 		<input type="submit" />
 	</form>
 	<p></p>
+
+	<div class="login">
+	<p>Vous avez deja un compte?  : <a href="login.php">Connectez vous</a></a> </p>
+	</div>
 
 <?php
 	$tableau_users = array(); //déclaration du tableau qui contiendra tous les utilisateurs en php
@@ -82,6 +86,15 @@
 				$_SESSION['tableau_users'][$indice]= new Users($_POST['username'],$_POST['password'],$imc);
 				$_SESSION['tableau_users'][$indice]->inscription($_POST['username'],$_POST['password'],$imc);
 				$_SESSION['indice']++;
+				header('Location: index.php');
+				$imc=$_POST['poids']/pow($_POST['taille'],2); //calcul de l'imc à partir des données du formulaire
+				//$user = new Users($_POST['username'],$_POST['password'],$imc); //je cherche un moyen d'avoir un nom de variable différent à chaque création d'objet User
+				//$user->inscription($_POST['username'],$_POST['password'],$imc);
+				$tableau_users[$indice]= new Users($_POST['username'],$_POST['password'],$imc);
+				$tableau_users[$indice]->inscription($_POST['username'],$_POST['password'],$imc);
+				$indice++;
+				
+
 				
 				header('Location: choixprogramme.php');
 				exit();
