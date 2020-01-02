@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>login</title>
+    <title>Inscription</title>
 </head>
 <?php require ("Users.php"); ?>
 <body>
@@ -75,7 +75,7 @@
 
 			if($flag==1) //alors on peut tout rentrer en base
 			{
-
+				header('Location: index.php');
 				$imc=$_POST['poids']/pow($_POST['taille'],2); //calcul de l'imc à partir des données du formulaire
 				//$user = new Users($_POST['username'],$_POST['password'],$imc); //je cherche un moyen d'avoir un nom de variable différent à chaque création d'objet User
 				//$user->inscription($_POST['username'],$_POST['password'],$imc);
@@ -83,6 +83,7 @@
 				$tableau_users[$indice]->inscription($_POST['username'],$_POST['password'],$imc);
 				$indice++;
 				
+
 				
 			}
 		}

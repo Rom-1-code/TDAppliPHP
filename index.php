@@ -42,7 +42,7 @@ $_SESSION['age'] = 19;
                         <ul class="right">
                             <li><b><a href="inscription.php">Inscription</a></li></b>
                             <li><b><a href="#">Score</a></li></b>
-                            <li><b><a href="#">A propos</a></li></b>
+                            <li><b><a href="apropos.php">A propos</a></li></b>
                         </ul>
                     </div>
                     <div class="clearfix"></div>
