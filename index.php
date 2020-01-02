@@ -40,7 +40,7 @@ $_SESSION['age'] = 19;
 
                     <div class="menu">
                         <ul class="right">
-                            <li><b><a href="inscription.php">login</a></li></b>
+                            <li><b><a href="inscription.php">Inscription</a></li></b>
                             <li><b><a href="#">Score</a></li></b>
                             <li><b><a href="#">A propos</a></li></b>
                         </ul>
@@ -52,7 +52,7 @@ $_SESSION['age'] = 19;
         <div class="para">
             <p>
                 Salut <?php echo $_SESSION['prenom']; ?> !
-                Bienvenue sur mon cul! Peut tu saisir ta taille et ton poids afin que je puisse calculer ton IMC ?
+                Bienvenue sur mon appli sportive! Peut tu saisir ta taille et ton poids afin que je puisse calculer ton IMC ?
             </p>
 
             <div class="form">

@@ -30,6 +30,10 @@
 	</form>
 	<p></p>
 
+	<div class="login">
+	<p>Vous avez deja un compte?  : <a href="login.php">Connectez vous</a></a> </p>
+	</div>
+
 <?php
 	$tableau_users = array(); //déclaration du tableau qui contiendra tous les utilisateurs en php
 	$indice=1;
