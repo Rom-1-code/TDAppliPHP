@@ -1,6 +1,5 @@
-<?php session_start();
-require("Users.php");
-?>
+<?php session_start();?>
+<?php require("Users.php"); ?>
 
 
 <h2>Connexion</h2>

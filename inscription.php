@@ -36,11 +36,14 @@
 	</div>
 
 <?php
-	$tableau_users = array(); //déclaration du tableau qui contiendra tous les utilisateurs en php
-	$_SESSION['tableau_users']=$tableau_users;
-
+	
 	$indice=1;
 	$_SESSION['indice']=$indice;
+
+	$_SESSION['tableau_users'] = array(); //déclaration du tableau qui contiendra tous les utilisateurs en php
+	
+
+	
 
 	if(isset($_POST['username'])&& isset($_POST['password']) && isset($_POST['password2']) &&  isset($_POST['poids']) &&  isset($_POST['taille']))
 	{
@@ -73,7 +76,6 @@
 			
 			if($usernameformulaire!=$pseudobase["pseudo"])
 			{
-				echo "le pseudo n'existe pas en base";
 				$flag = 1; //valeur qui nous indiquera si le pseudo est en base ou non, si flag existe et vaut 1 alors on peut envoyer le mdp et le username dans la base pour en faire un nouvel utilisateur
 			}
 
