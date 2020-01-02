@@ -1,4 +1,7 @@
 <?php session_start(); ?>
+<?php require ("Users.php");?> 
+<?php require ("inscription.php");?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -7,23 +10,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>login</title>
 </head>
-<?php require ("Users.php"); 
-      require ("inscription.php");
-?>
+
 <body>
-<h2>Choix de votre programme</h2>
+<h2>Choix de votre programme : </h2>
 	
 	<form action="choixprogramme.php" method="POST">
-		<label>Tonic :</label>
-		<input type="text" name="username" required />
+		
+	<input type="radio" id="tonic1" name="progtonic" value="Tonic" checked>
+  	<label for="Tonic">Tonic</label>
 		<p></p>
-		<label>Intensif:</label>
-		<input type="password" name="password" required />
+	<input type="radio" id="intensif1" name="progintensif" value="Intensif" checked>
+  	<label for="Intensif">Intensif</label>
 		<p></p>
-		<label>Forme :</label>
-		<input type="password" name="password2" required />
+	<input type="radio" id="forme1" name="progforme" value="Forme" checked>
+  	<label for="Forme">Forme</label>
 		<p></p>
-		<input type="submit" />
+	<input type="submit" />
+	
 	</form>
 	<p></p>
 
