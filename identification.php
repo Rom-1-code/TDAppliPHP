@@ -1,4 +1,4 @@
-<?php require ("Users.php");?>
+<?php require ("Users.php"); ?>
 <?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="fr">
