@@ -4,13 +4,38 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="css/identification.css">
+	
     <title>Inscription</title>
 </head>
 <body>
-<h2>Inscription</h2>
+
+<div class="form1">
+	<h2>Inscription</h2>
+		<form action="identification.php" method="POST">
+			<label>Identifiant :</label>
+			<input type="text" name="username" required />
+			<p></p>
+			<label>Mot de passe :</label>
+			<input type="password" name="password" required />
+			<p></p>
+			<label>Retapez mot de passe :</label>
+			<input type="password" name="password2" required />
+			<p></p>
+			<label>Votre poids : </label>
+			<input type="text" name="poids" required />
+			<p></p>
+			<label>Votre taille en cm : </label>
+			<input type="text" name="taille" required />
+			<p></p>
+			<input type="submit" />
+		</form>
+	<p></p>
+</div>
 	
+<<<<<<< HEAD:inscription.php
 	<form action="inscription.php" method="POST">
 		<label>Identifiant :</label>
 		<input type="text" name="username" required />
@@ -28,12 +53,27 @@
 		<input type="text" name="taille" required />
 		<p></p>
 		<input type="submit" />
+=======
+<div class="form2">
+	<h2>Connexion</h2>
+		<form action="identification.php" method="POST">
+			<p></p>
+			<label>Identifiant :</label>
+			<input type="text" name="username" required />
+			<p></p>
+			<label>Mot de passe :</label>
+			<input type="password" name="password" required />
+			<p></p>
+			<input type="submit" />
+>>>>>>> 1c285aedab8cf66f0b84c2f3853316bcb5c04b2c:identification.php
 	</form>
-	<p></p>
+</div>
+<?php
 
-	<div class="login">
-	<p>Vous avez deja un compte?  : <a href="login.php">Connectez vous</a></a> </p>
-	</div>
+if(isset($_POST['username'])&& isset($_POST['password'])){
+
+}
+?>
 
 <?php
 	

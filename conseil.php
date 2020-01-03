@@ -1,25 +1,16 @@
-<?php require("Users.php"); ?>
-<?php session_start();
-
-$_SESSION['prenom'] = 'Mathis';
-$_SESSION['nom'] = 'Clermont';
-$_SESSION['age'] = 19;
-
-?>
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
-    <title>Fitness</title>
+    <link rel="stylesheet" href="css/inscription.css">
+    <title>Conseil</title>
 </head>
-
 <body>
-    <!-- HEADER -->
-    <div class="page">
+     <!-- HEADER -->
+     <div class="page">
         <header>
             <div class="container">
                 <nav class="menu-bar">
@@ -40,7 +31,7 @@ $_SESSION['age'] = 19;
 
                     <div class="menu">
                         <ul class="right">
-                            <li><b><a href="#">Decouvrir</a></li></b>
+                            <li><b><a href="index.php">Decouvrir</a></li></b>
                             <li><b><a href="conseil.php">Conseil</a></li></b>
                             <li><b><a href="apropos.php">A propos</a></li></b>
                             <li><b><a href="identification.php">S'identifier</a></li></b>
@@ -53,6 +44,11 @@ $_SESSION['age'] = 19;
 </div>
 <!-- FIN HEADER -->
 
-</body>
+<div class="titre">
+    <h1>Conseils pratiques </h1>
+</div>
+<div class="conseil">
 
+</div>
+</body>
 </html>
