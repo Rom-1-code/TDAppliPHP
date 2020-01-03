@@ -40,7 +40,7 @@ class Users
          
     }
 
-    public function inscription($nom,$mdp,$imc)
+    public function inscription($nom,$mdp,$imc,$idprog)
     {
         try
 		{

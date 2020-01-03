@@ -24,7 +24,7 @@
 		<label>Votre poids : </label>
 		<input type="text" name="poids" required />
 		<p></p>
-		<label>Votre taille en cm : </label>
+		<label>Votre taille en m : </label>
 		<input type="text" name="taille" required />
 		<p></p>
 		<input type="submit" />
@@ -37,10 +37,9 @@
 
 <?php
 	
-	$indice=1;
+	$indice;
 	$_SESSION['indice']=1;
-
-	$_SESSION['tableau_users'] = array(); //déclaration du tableau qui contiendra tous les utilisateurs en php
+    $_SESSION['tableau_users'] = array(); //déclaration du tableau qui contiendra tous les utilisateurs en php
 	
 
 	
@@ -82,19 +81,22 @@
 			if($flag==1) //alors on peut tout rentrer en base
 			{
 				$_SESSION['imc'];
+				$_SESSION['username']=$_POST['username'];
+				$_SESSION['password']=$_POST['password'];
 				$_SESSION['imc']=$_POST['poids']/pow($_POST['taille'],2); //calcul de l'imc à partir des données du formulaire
-  				
 				  
-				$_SESSION['tableau_users'][$indice]= new Users($_POST['username'],$_POST['password'],$imc);
-				$_SESSION['tableau_users'][$indice]->inscription($_POST['username'],$_POST['password'],$imc);
-				$_SESSION['indice']++;
+				//$indice=$_SESSION['indice'];
+				  
+				//$_SESSION['tableau_users'][$indice]= new Users($_POST['username'],$_POST['password'],$_SESSION['imc']);
+				//$_SESSION['tableau_users'][$indice]->inscription($_POST['username'],$_POST['password'],$_SESSION['imc']);
+				//$_SESSION['indice']++;
 				
 				
 				//$user = new Users($_POST['username'],$_POST['password'],$imc); //je cherche un moyen d'avoir un nom de variable différent à chaque création d'objet User
 				//$user->inscription($_POST['username'],$_POST['password'],$imc);
 				//$tableau_users[$indice]= new Users($_POST['username'],$_POST['password'],$imc);
 				//$tableau_users[$indice]->inscription($_POST['username'],$_POST['password'],$imc);
-				$indice++;
+				//$indice++;
 				
 
 				

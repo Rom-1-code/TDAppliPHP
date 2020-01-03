@@ -1,5 +1,6 @@
 <?php require ("Users.php");?> 
 <?php require ("inscription.php");?>
+<?php require ("Programme.php");?>
 <?php session_start(); ?>
 
 
@@ -15,22 +16,48 @@
 <body>
 <h2>Choix de votre programme : </h2>
 	
-	<form action="choixprogramme.php" method="POST">
-		
-	<input type="radio" id="tonic1" name="progtonic" value="Tonic" checked>
-  	<label for="Tonic">Tonic</label>
-		<p></p>
-	<input type="radio" id="intensif1" name="progintensif" value="Intensif" checked>
-  	<label for="Intensif">Intensif</label>
-		<p></p>
-	<input type="radio" id="forme1" name="progforme" value="Forme" checked>
-  	<label for="Forme">Forme</label>
-		<p></p>
-	<input type="submit" />
+<form action="choixprogramme.php" method="POST">
 	
-	</form>
-	<p></p>
+	<?php	if(25<=$_SESSION['imc'] && $_SESSION['imc']<=30)		
+			{ ?>
+				<input type="radio" id="tonic1" name="Tonic" value="1" checked>
+				<label for="Tonic">Tonic</label>
+	<?php	} ?>
+				<p></p>
+	<?php	if($_SESSION['imc']>=18.35 && $_SESSION['imc']<27)
+			{ ?>
+				<input type="radio" id="intensif1" name="Intensif" value="3" checked>
+				<label for="Intensif">Intensif</label>
+<?php		} ?>
+			<p></p>
 
+<?php		if($_SESSION['imc']>=16,5 && $_SESSION['imc']<26)
+			{ ?>
+				<input type="radio" id="forme1" name="Forme" value="2" checked>
+				<label for="Forme">Forme</label>
+<?php		} ?>
+			
+				<p></p>
+			<input type="submit" />
+			
+			</form>
+			<p></p>
+<?php
+
+$indice;
+$indice = $_SESSION['indice'];
+
+if(isset($_POST['Tonic']))
+{
+	
+	$_SESSION['tableau_users'][$indice]= new Users($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
+	$_SESSION['tableau_users'][$indice]->inscription($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
+	$_SESSION['indice']++
+}		
+
+
+
+?>
 
 
 	
