@@ -1,4 +1,7 @@
+<?php require ("inscription.php"); ?>
+<?php require ("choixprogramme.php"); ?>
 <?php
+
 class Users
 {
     //propriété :
@@ -7,7 +10,7 @@ class Users
     private $_Id;
     private $_Imc;
 
-    //méthode :
+    //constructeur :
     public function __construct($newNom,$newMdp,$newimc)
     {
         $this->_Nom = $newNom;
