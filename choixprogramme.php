@@ -1,6 +1,6 @@
-<?php session_start(); ?>
 <?php require ("Users.php");?> 
-<?php require ("inscription.php");?>
+
+<?php session_start(); ?>
 
 <!DOCTYPE html>
 <html lang="fr">

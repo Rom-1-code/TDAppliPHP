@@ -1,3 +1,4 @@
+<?php require ("Users.php");?>
 <?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -7,7 +8,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Inscription</title>
 </head>
-<?php require ("Users.php"); ?>
 <body>
 <h2>Inscription</h2>
 	
@@ -26,7 +26,7 @@
 		<p></p>
 		<label>Votre taille en cm : </label>
 		<input type="text" name="taille" required />
-		<p></p>*
+		<p></p>
 		<input type="submit" />
 	</form>
 	<p></p>
