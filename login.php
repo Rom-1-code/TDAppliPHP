@@ -1,5 +1,5 @@
-<?php session_start();?>
 <?php require("Users.php"); ?>
+<?php session_start();?>
 
 
 <h2>Connexion</h2>

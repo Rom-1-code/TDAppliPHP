@@ -1,5 +1,3 @@
-<?php require ("inscription.php"); ?>
-<?php require ("choixprogramme.php"); ?>
 <?php
 
 class Users
