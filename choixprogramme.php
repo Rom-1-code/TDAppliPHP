@@ -15,8 +15,7 @@
 	
 <form action="choixprogramme.php" method="POST">
 	
-
-			
+		
 	<?php	if(25<=$_SESSION['imc'] && $_SESSION['imc']<=30)     
 			{ ?>
 				<input type="checkbox" id="tonic1" name="Tonic" value="1"  >
