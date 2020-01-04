@@ -101,7 +101,7 @@ $_SESSION['tableau_users'] = array(); //déclaration du tableau qui contiendra t
 
 				
 				header('Location: choixprogramme.php');
-				exit();
+				Exit();
 			}
 		}
 		else
