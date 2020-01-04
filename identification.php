@@ -1,6 +1,7 @@
-<?php require ("Users.php"); ?>
-<?php require ("choixprogramme.php");?> 
+<?php require ("Users"); ?>
+<?php require ("choixprogramme");?> 
 <?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -51,6 +52,11 @@
 </div>
 <?php
 
+
+$_SESSION['indice']=1;
+$_SESSION['tableau_users'] = array(); //déclaration du tableau qui contiendra tous les utilisateurs en php
+
+
 if(isset($_POST['username'])&& isset($_POST['password'])){
 
 }
@@ -58,9 +64,7 @@ if(isset($_POST['username'])&& isset($_POST['password'])){
 
 <?php
 	
-	$indice;
-	$_SESSION['indice']=1;
-    $_SESSION['tableau_users'] = array(); //déclaration du tableau qui contiendra tous les utilisateurs en php
+	
 	
 
 	
