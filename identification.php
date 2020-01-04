@@ -1,5 +1,5 @@
 <?php session_start(); ?>
-<?php require ("Users.php"); ?>
+
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -54,17 +54,6 @@
 
 $_SESSION['indice']=1;
 $_SESSION['tableau_users'] = array(); //déclaration du tableau qui contiendra tous les utilisateurs en php
-
-
-if(isset($_POST['username'])&& isset($_POST['password'])){
-
-}
-?>
-
-<?php
-	
-	
-	
 
 	
 

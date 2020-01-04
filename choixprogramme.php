@@ -1,5 +1,7 @@
-<?php session_start(); ?>
+<?php require ("identification.php");?>
 <?php require ("Users.php");?>
+
+
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -15,7 +17,7 @@
 	
 <form action="choixprogramme.php" method="POST">
 	
-	<?php	if(25<=$_SESSION['imc'] && $_SESSION['imc']<=30)		
+	<?php	if(25<=$_SESSION['imc'] && $_SESSION['imc']<=30)	echo $_SESSION['imc'];	
 			{ ?>
 				<input type="radio" id="tonic1" name="Tonic" value="1" checked>
 				<label for="Tonic">Tonic</label>
