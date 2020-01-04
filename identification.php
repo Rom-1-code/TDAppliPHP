@@ -111,7 +111,7 @@ $_SESSION['tableau_users'] = array(); //déclaration du tableau qui contiendra t
 
 	}
 ?>
-	<div class="form2">
+<div class="form2">
 	<h2>Connexion</h2>
 		<form action="identification.php" method="POST">
 			<p></p>
@@ -124,6 +124,11 @@ $_SESSION['tableau_users'] = array(); //déclaration du tableau qui contiendra t
 			<input type="submit" />
 	</form>
 </div>
+<?php
 
+
+
+
+?>
 </body>
 </html>

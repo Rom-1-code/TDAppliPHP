@@ -46,15 +46,16 @@
     </div>
     <!-- FIN HEADER -->
 
-    <div class="titre">
+    <div class="titre2">
         <h1>Conseils pratiques </h1>
     </div>
     <div class="conseil">
-        <ul>
-            <li><a href="pdf/Musculation.pdf">Conseil de Musculation</a></li>
-            <li><a href="pdf/Musculation.pdf">Conseil Nutritif</a></li>
-        </ul>
-
+        <div class="menu2">
+            <ul>
+                <li><a href="pdf/Musculation.pdf">Conseil de Musculation</a></li>
+                <li><a href="pdf/Musculation.pdf">Conseil Nutritif</a></li>
+            </ul>
+        </div>
     </div>
 </body>
 
