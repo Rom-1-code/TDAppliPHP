@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -8,9 +9,10 @@
     <link rel="stylesheet" href="css/inscription.css">
     <title>Conseil</title>
 </head>
+
 <body>
-     <!-- HEADER -->
-     <div class="page">
+    <!-- HEADER -->
+    <div class="page">
         <header>
             <div class="container">
                 <nav class="menu-bar">
@@ -41,14 +43,19 @@
                 </nav>
         </header>
     </div>
-</div>
-<!-- FIN HEADER -->
+    </div>
+    <!-- FIN HEADER -->
 
-<div class="titre">
-    <h1>Conseils pratiques </h1>
-</div>
-<div class="conseil">
-<a href="pdf/Musculation.pdf">PDF de Muscu</a>
-</div>
+    <div class="titre">
+        <h1>Conseils pratiques </h1>
+    </div>
+    <div class="conseil">
+        <ul>
+            <li><a href="pdf/Musculation.pdf">Conseil de Musculation</a></li>
+            <li><a href="pdf/Musculation.pdf">Conseil Nutritif</a></li>
+        </ul>
+
+    </div>
 </body>
+
 </html>

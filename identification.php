@@ -36,19 +36,6 @@
 	<p></p>
 </div>
 	
-<div class="form2">
-	<h2>Connexion</h2>
-		<form action="identification.php" method="POST">
-			<p></p>
-			<label>Identifiant :</label>
-			<input type="text" name="username" required />
-			<p></p>
-			<label>Mot de passe :</label>
-			<input type="password" name="password" required />
-			<p></p>
-			<input type="submit" />
-	</form>
-</div>
 <?php
 
 
@@ -117,15 +104,26 @@ $_SESSION['tableau_users'] = array(); //déclaration du tableau qui contiendra t
 				exit();
 			}
 		}
-		
-
-		
-
-
-
+		else
+		{
+			?><div class="erreur"><p>Le mot de passe doit être identique</p></div> <?php
+		}
 
 	}
 ?>
-	
+	<div class="form2">
+	<h2>Connexion</h2>
+		<form action="identification.php" method="POST">
+			<p></p>
+			<label>Identifiant :</label>
+			<input type="text" name="username" required />
+			<p></p>
+			<label>Mot de passe :</label>
+			<input type="password" name="password" required />
+			<p></p>
+			<input type="submit" />
+	</form>
+</div>
+
 </body>
 </html>
