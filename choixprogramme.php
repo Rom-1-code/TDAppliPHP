@@ -46,15 +46,72 @@
 $indice;
 $indice = $_SESSION['indice'];
 
-if(isset($_POST['Tonic']))
+if(isset($_POST['Tonic'])&&!isset($_POST['Intensif'])&&!isset($_POST['Forme']))
 {
 
 	$_SESSION['tableau_users'][$indice]= new Users($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
 	$_SESSION['tableau_users'][$indice]->inscription($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
 	$_SESSION['indice']++;
-}		
+}
 
+if(isset($_POST['Intensif'])&&!isset($_POST['Tonic'])&&!isset($_POST['Forme']))
+{
 
+	$_SESSION['tableau_users'][$indice]= new Users($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
+	$_SESSION['tableau_users'][$indice]->inscription($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
+	$_SESSION['indice']++;
+}
+
+if(isset($_POST['Forme'])&&!isset($_POST['Intensif'])&&!isset($_POST['Tonic']))
+{
+
+	$_SESSION['tableau_users'][$indice]= new Users($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
+	$_SESSION['tableau_users'][$indice]->inscription($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
+	$_SESSION['indice']++;
+}
+
+if(isset($_POST['Tonic'])&&isset($_POST['Intensif'])&&isset($_POST['Forme']))
+{
+
+	$_SESSION['tableau_users'][$indice]= new Users($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
+	$_SESSION['tableau_users'][$indice]->inscription($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
+	$_SESSION['indice']++;
+}	
+
+if(isset($_POST['Tonic'])&&isset($_POST['Intensif'])&&!isset($_POST['Forme']))
+{
+
+	$_SESSION['tableau_users'][$indice]= new Users($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
+	$_SESSION['tableau_users'][$indice]->inscription($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
+	$_SESSION['indice']++;
+}	
+
+if(isset($_POST['Tonic'])&&!isset($_POST['Intensif'])&&isset($_POST['Forme']))
+{
+
+	$_SESSION['tableau_users'][$indice]= new Users($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
+	$_SESSION['tableau_users'][$indice]->inscription($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
+	$_SESSION['indice']++;
+}	
+
+if(!isset($_POST['Tonic'])&&isset($_POST['Intensif'])&&isset($_POST['Forme']))
+{
+
+	$_SESSION['tableau_users'][$indice]= new Users($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
+	$_SESSION['tableau_users'][$indice]->inscription($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
+	$_SESSION['indice']++;
+}	
+
+if(!isset($_POST['Tonic'])&&isset($_POST['Intensif'])&&isset($_POST['Forme']))
+{
+    echo $_POST['Intensif'];
+	echo $_POST['Forme'];
+	$_SESSION['tableau_users'][$indice]= new Users($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
+	$_SESSION['tableau_users'][$indice]->inscription($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
+	$_SESSION['indice']++;
+	
+
+}	
 
 ?>
 
