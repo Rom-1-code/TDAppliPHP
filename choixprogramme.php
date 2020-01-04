@@ -1,7 +1,5 @@
-<?php require ("identification.php");?>
+<?php session_start(); ?>
 <?php require ("Users.php");?>
-
-
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -18,22 +16,23 @@
 <form action="choixprogramme.php" method="POST">
 	
 
-	<?php	if(25<=$_SESSION['imc'] && $_SESSION['imc']<=30)		
+			
+	<?php	if(25<=$_SESSION['imc'] && $_SESSION['imc']<=30)     
 			{ ?>
-				<input type="radio" id="tonic1" name="Tonic" value="1" checked>
+				<input type="checkbox" id="tonic1" name="Tonic" value="1"  >
 				<label for="Tonic">Tonic</label>
 	<?php	} ?>
 				<p></p>
 	<?php	if($_SESSION['imc']>=18.35 && $_SESSION['imc']<27)
 			{ ?>
-				<input type="radio" id="intensif1" name="Intensif" value="3" checked>
+				<input type="checkbox" id="intensif1" name="Intensif" value="3" >
 				<label for="Intensif">Intensif</label>
 <?php		} ?>
 			<p></p>
 
 <?php		if($_SESSION['imc']>=16.5 && $_SESSION['imc']<26)
 			{ ?>
-				<input type="radio" id="forme1" name="Forme" value="2" checked>
+				<input type="checkbox" id="forme1" name="Forme" value="2">
 				<label for="Forme">Forme</label>
 <?php		} ?>
 			
