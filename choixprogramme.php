@@ -17,7 +17,8 @@
 	
 <form action="choixprogramme.php" method="POST">
 	
-	<?php	if(25<=$_SESSION['imc'] && $_SESSION['imc']<=30)	echo $_SESSION['imc'];	
+
+	<?php	if(25<=$_SESSION['imc'] && $_SESSION['imc']<=30)		
 			{ ?>
 				<input type="radio" id="tonic1" name="Tonic" value="1" checked>
 				<label for="Tonic">Tonic</label>
