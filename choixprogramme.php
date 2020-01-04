@@ -1,11 +1,5 @@
-
-<?php require ("identification.php");?>
-<?php require ("Users.php");?> 
-<?php require ("Programme.php");?>
 <?php session_start(); ?>
-
-
-
+<?php require ("Users.php");?>
 
 <!DOCTYPE html>
 <html lang="fr">

@@ -48,7 +48,7 @@
     <h1>Conseils pratiques </h1>
 </div>
 <div class="conseil">
-
+<a href="pdf/Musculation.pdf">PDF de Muscu</a>
 </div>
 </body>
 </html>
