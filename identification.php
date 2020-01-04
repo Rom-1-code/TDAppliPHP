@@ -1,4 +1,5 @@
 <?php require ("Users.php"); ?>
+<?php require ("choixprogramme.php");?> 
 <?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="fr">

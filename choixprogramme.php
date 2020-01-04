@@ -1,6 +1,8 @@
+<?php require ("identification.php");?>
 <?php require ("Users.php");?> 
-<?php require ("inscription.php");?>
 <?php require ("Programme.php");?>
+
+
 <?php session_start(); ?>
 
 
@@ -31,7 +33,7 @@
 <?php		} ?>
 			<p></p>
 
-<?php		if($_SESSION['imc']>=16,5 && $_SESSION['imc']<26)
+<?php		if($_SESSION['imc']>=16.5 && $_SESSION['imc']<26)
 			{ ?>
 				<input type="radio" id="forme1" name="Forme" value="2" checked>
 				<label for="Forme">Forme</label>
@@ -52,7 +54,7 @@ if(isset($_POST['Tonic']))
 
 	$_SESSION['tableau_users'][$indice]= new Users($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
 	$_SESSION['tableau_users'][$indice]->inscription($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
-	$_SESSION['indice']++
+	$_SESSION['indice']++;
 }		
 
 
