@@ -6,7 +6,8 @@ class Users
     //propriété :
     private $_Nom;
     private $_Mdp;
-    private $_Id;
+    private $_Iduser;
+    private $_Idprog
     private $_Imc;
 
     //constructeur :
