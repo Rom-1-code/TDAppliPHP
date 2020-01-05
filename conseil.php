@@ -50,12 +50,12 @@
         <h1>Conseils pratiques </h1>
     </div>
     <div class="conseil">
-        <div class="menu2">
+        <nav>
             <ul>
                 <li><a href="pdf/Musculation.pdf">Conseil de Musculation</a></li>
-                <li><a href="pdf/Musculation.pdf">Conseil Nutritif</a></li>
+                <li><a href="pdf/Nutrition sportive.pdf">Conseil Nutritif</a></li>
             </ul>
-        </div>
+        </nav>
     </div>
 </body>
 

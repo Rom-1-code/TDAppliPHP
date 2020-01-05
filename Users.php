@@ -7,7 +7,7 @@ class Users
     private $_Nom;
     private $_Mdp;
     private $_Iduser;
-    private $_Idprog
+    private $_Idprog;
     private $_Imc;
 
     //constructeur :
@@ -38,10 +38,12 @@ class Users
             }
             
         }
-        if($futurtableau["pseudo"]!=$nom || $futurtableau["motdepasse"]!=$mdp){
+        if($futurtableau["pseudo"]!=$nom || $futurtableau["motdepasse"]!=$mdp);{
             echo"Cet utilisateur n'existe pas !";
-        }
-
+		}
+	
+        
+         
 
          
     }
