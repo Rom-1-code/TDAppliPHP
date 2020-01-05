@@ -1,3 +1,4 @@
+<?php require "Users.php";?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
