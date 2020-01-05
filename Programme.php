@@ -20,16 +20,7 @@ class Programme
 
         try
         {
-            $Base->query("INSERT into user (id_programme) VALUES ('$this->_idprog')");
-        }
-        catch(Exception $erreurs)
-        {
-            echo "pas possible d'insérer cette valeur";
-        }
-
-        try
-        {
-            $donneesbrutes=$Base->query("SELECT adressepageprogramme from programme,user where programme.id_programme=user.id_programme");
+            $donneesbrutes=$Base->query("SELECT id_programme from programme,user where programme.id_programme=user.id_programme");
         }
         catch(Exception $erreur)
         {

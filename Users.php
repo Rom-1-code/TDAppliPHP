@@ -61,6 +61,8 @@ class Users
 
         $Iduser = $Base->query('SELECT id_user from user where pseudo="'.$nom.'" AND motdepasse="'.$mdp.'" AND imc="'.$imc.'"'); //on recupère l'id de l'utilisateur qui vient d'être crée
         $this->_Id=$Iduser;
+        
+        header('Location: navprogrammes.php');
     }
 }
 ?>
