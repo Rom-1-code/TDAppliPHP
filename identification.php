@@ -1,5 +1,5 @@
 <?php session_start(); ?>
-
+<?php require ("Users.php");?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -125,8 +125,12 @@ $_SESSION['tableau_users'] = array(); //déclaration du tableau qui contiendra t
 	</form>
 </div>
 <?php
+if(isset($_POST['username'])&& isset($_POST['password'])){
+	
+	$_SESSION['tableau_users'][$indice]= new Users($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
+	$_SESSION['tableau_users'][$indice]->login($_POST['username'],$_POST['password']);
 
-
+}
 
 
 ?>
