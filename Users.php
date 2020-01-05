@@ -53,7 +53,7 @@ class Users
 			echo "accès à la base impossible";
         }
         
-        $Base->query('INSERT INTO user (id_programme,imc,pseudo,motdepasse) VALUES ("'.$imc.'","'.$nom.'","'.$mdp.'")'); //insertion d'une nouvelle ligne dans la bdd
+        $Base->query('INSERT INTO user (id_programme,imc,pseudo,motdepasse) VALUES ("'.$idprog.'","'.$imc.'","'.$nom.'","'.$mdp.'")'); //insertion d'une nouvelle ligne dans la bdd
 
         $Iduser = $Base->query('SELECT id_user from user where pseudo="'.$nom.'" AND motdepasse="'.$mdp.'" AND imc="'.$imc.'"'); //on recupère l'id de l'utilisateur qui vient d'être crée
         $this->_Id=$Iduser;
