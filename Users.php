@@ -28,13 +28,17 @@ class Users
 			echo "accès à la base impossible";
         }
          
-         $Donneesbase = $Base->query('SELECT pseudo,motdepasse from user where pseudo ="'.$nom.'" AND motdepasse ="'.$mdp.'"');
+        $Donneesbase = $Base->query('SELECT pseudo,motdepasse from user where pseudo ="'.$nom.'" AND motdepasse ="'.$mdp.'"');
         while($futurtableau = $Donneesbase->fetch()){
 
             if($futurtableau["pseudo"]==$nom && $futurtableau["motdepasse"]==$mdp){
+
                 header('Location: navprogrammes.php');
             }
-
+            
+        }
+        if($futurtableau["pseudo"]!=$nom || $futurtableau["motdepasse"]!=$mdp){
+            echo"Cet utilisateur n'existe pas !";
         }
 
 

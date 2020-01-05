@@ -1,11 +1,5 @@
-<?php require("Users.php"); ?>
-<?php session_start();
-
-$_SESSION['prenom'] = 'Mathis';
-$_SESSION['nom'] = 'Clermont';
-$_SESSION['age'] = 19;
-
-?>
+<?php require("Users.php");
+session_start();?>
 <!DOCTYPE html>
 <html lang="fr">
 
