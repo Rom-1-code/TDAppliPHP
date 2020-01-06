@@ -76,7 +76,7 @@ class Users
 
     public function getname()
     {
-        return $this->_Nom;
+        return $this->_Nom; //pour savoir le nom de l'utilisateur courant
     }
 
 

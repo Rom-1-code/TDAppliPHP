@@ -13,6 +13,7 @@
 $quelprog;
 
 $quelprog = $_SESSION['tableau_users'][$indice]->getidprog();
+$pseudo_user = $_SESSION['tableau_users'][$indice]->getname();
 
 try
 {
@@ -25,14 +26,17 @@ catch(Exception $erreur)
 
 try
 {
-	$Base->query('SELECT id_programme from user where pseudo=)
+	$idprogcourant = $Base->query('SELECT id_programme from user where pseudo="'.$pseudo_user.'"'); //on regarde quel programme correspond à l'utilisateur
+}
 catch(Exception $erreur)
 {
 	echo "accès à la base impossible";
 }
 
-
-if()
+if($idprogcourant==$quelprog && $idprogcourant==1)
+{
+   ?> <embed src="Musculation.pdf" width=800 height=500 type='application/pdf'/> <?php
+}
 
 ?>
 </body>
