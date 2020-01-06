@@ -38,10 +38,12 @@ class Users
             }
             
         }
-        if($futurtableau["pseudo"]!=$nom || $futurtableau["motdepasse"]!=$mdp){
+        if($futurtableau["pseudo"]!=$nom || $futurtableau["motdepasse"]!=$mdp);{
             echo"Cet utilisateur n'existe pas !";
-        }
-
+		}
+	
+        
+         
 
          
     }

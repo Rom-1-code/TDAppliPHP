@@ -14,3 +14,7 @@ body {
     margin-left: 10px;
     color: red;
 }
+
+nav ul li {
+    display: none;
+}
