@@ -22,7 +22,7 @@
 			<label>Mot de passe :</label>
 			<input type="password" name="password" required />
 			<p></p>
-			<label>Retapez mot de passe :</label>
+			<label>Confirmez le mot de passe :</label>
 			<input type="password" name="password2" required />
 			<p></p>
 			<label>Votre poids : </label>
