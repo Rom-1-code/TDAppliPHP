@@ -1,4 +1,7 @@
-<?php require "Users.php"; ?>
+<?php session_start(); ?>
+<?php require ("Users.php");?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -63,8 +66,8 @@
 
 
 <?php
-$quelprog;
 
+$quelprog;
 $quelprog = $_SESSION['tableau_users'][$indice]->getidprog();
 $pseudo_user = $_SESSION['tableau_users'][$indice]->getname();
 
@@ -86,7 +89,7 @@ catch(Exception $erreur)
 	echo "accès à la base impossible";
 }
 
-if($idprogcourant==$quelprog && $idprogcourant==1)
+if($idprogcourant==$quelprog && $idprogcourant==2)
 {
    ?> <embed src="Musculation.pdf" width=800 height=500 type='application/pdf'/> <?php
 }
