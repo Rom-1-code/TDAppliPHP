@@ -9,6 +9,31 @@
     <title>Navigation programme</title>
 </head>
 <body>
-    
+<?php
+$quelprog;
+
+$quelprog = $_SESSION['tableau_users'][$indice]->getidprog();
+
+try
+{
+	$Base =  new PDO('mysql:host=localhost; dbname=base_sportive; charset=utf8','root','');
+}
+catch(Exception $erreur)
+{
+	echo "accès à la base impossible";
+}
+
+try
+{
+	$Base->query('SELECT id_programme from user where pseudo=)
+catch(Exception $erreur)
+{
+	echo "accès à la base impossible";
+}
+
+
+if()
+
+?>
 </body>
 </html>

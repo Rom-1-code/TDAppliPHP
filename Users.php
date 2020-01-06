@@ -7,7 +7,7 @@ class Users
     private $_Nom;
     private $_Mdp;
     private $_Iduser;
-    private $_Idprog
+    private $_Idprog;
     private $_Imc;
 
     //constructeur :
@@ -59,10 +59,26 @@ class Users
         
         $Base->query('INSERT INTO user (id_programme,imc,pseudo,motdepasse) VALUES ("'.$idprog.'","'.$imc.'","'.$nom.'","'.$mdp.'")'); //insertion d'une nouvelle ligne dans la bdd
 
-        $Iduser = $Base->query('SELECT id_user from user where pseudo="'.$nom.'" AND motdepasse="'.$mdp.'" AND imc="'.$imc.'"'); //on recupère l'id de l'utilisateur qui vient d'être crée
-        $this->_Id=$Iduser;
+        $Id = $Base->query('SELECT id_user from user where pseudo="'.$nom.'" AND motdepasse="'.$mdp.'" AND imc="'.$imc.'"'); //on recupère l'id de l'utilisateur qui vient d'être crée
+        $this->_Iduser=$Id;
+        $this->_Idprog=$idprog;
+        $this->_Nom=$nom;
+        $this->_Imc=$imc;
+        $this->_Mdp=$mdp;
         
         header('Location: navprogrammes.php');
     }
+
+    public function getidprog()
+    {
+        return $this->_Idprog; //pour savoir quel(s) programme(s) est affilié à l'utilisateur
+    }
+
+    public function getname()
+    {
+        return $this->_Nom;
+    }
+
+
 }
 ?>
