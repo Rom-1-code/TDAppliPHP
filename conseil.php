@@ -45,17 +45,30 @@
     </div>
     </div>
     <!-- FIN HEADER -->
-
     <div class="titre2">
         <h1>Conseils pratiques </h1>
     </div>
-    <div class="conseil">
-        <nav>
-            <ul>
-                <li><a href="pdf/Musculation.pdf">Conseil de Musculation</a></li>
-                <li><a href="pdf/Nutrition sportive.pdf">Conseil Nutritif</a></li>
-            </ul>
-        </nav>
+    <div class="ligne1">
+        <div class="Nutritif">
+            <h2>Conseil Nutritif</h2>
+        </div>
+        <div class="Musculation">
+            <h2>Conseil de Musculation</h2>
+        </div>
+        <div class="Conseilforme">
+            <h2>Conseil pour être en pleine forme</h2>
+        </div>
+    </div>
+    <div class="ligne2">
+        <div class="Nutritif">
+            <h2>Conseil Nutritif</h2>
+        </div>
+        <div class="Musculation">
+            <h2>Conseil de Musculation</h2>
+        </div>
+        <div class="Conseilforme">
+            <h2>Conseil pour être en pleine forme</h2>
+        </div>
     </div>
 </body>
 

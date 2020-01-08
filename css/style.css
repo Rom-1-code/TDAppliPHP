@@ -86,10 +86,32 @@ header .menu-bar .menu b a:hover {
     background-color: salmon;
 }
 
-.conseil {
-    background-color: salmon;
-    width: 15%;
-    height: 706px;
+.ligne2 {
+    margin-top: 20px;
+}
+
+.Nutritif {
+    text-align: center;
+    display: inline-block;
+    width: 33%;
+    height: 406px;
+    /* background-color: aqua;*/
+}
+
+.Musculation {
+    text-align: center;
+    display: inline-block;
+    width: 33%;
+    height: 406px;
+    /* background-color: burlywood;*/
+}
+
+.Conseilforme {
+    text-align: center;
+    display: inline-block;
+    width: 33%;
+    height: 406px;
+    /* background-color: crimson; */
 }
 
 

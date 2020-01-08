@@ -50,7 +50,7 @@ $_SESSION['tableau_users'] = array(); //déclaration du tableau qui contiendra t
 		{
 			try
 			{
-				$Base =  new PDO('mysql:host=localhost; dbname=base_sportive; charset=utf8','root','');
+				$Base =  new PDO('mysql:host=192.168.65.204; dbname=base_sportive; charset=utf8','root','root');
 			}
 			catch(Exception $erreurs)
 			{
