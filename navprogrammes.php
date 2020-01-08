@@ -68,11 +68,15 @@
 
 <?php
 
-//$quelprog;
+$quelprog;
+$pseudo_user;
 
-//if(isset)
-//$quelprog = $_SESSION['tableau_users'][$indice]->getidprog();
-//$pseudo_user = $_SESSION['tableau_users'][$indice]->getname();
+if(isset($_SESSION['tableau_users'])&& isset($_SESSION['indice']))
+{
+    $quelprog = $_SESSION['tableau_users'][$indice]->getidprog();
+    $pseudo_user = $_SESSION['tableau_users'][$indice]->getname();
+}
+
 
 try
 {

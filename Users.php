@@ -71,6 +71,21 @@ class Users
         header('Location: navprogrammes.php');
     }
 
+    public function suppressionuser($nom,$mdp)
+    {
+        try
+		{
+			$Base =  new PDO('mysql:host=localhost; dbname=base_sportive; charset=utf8','root','root');
+		}
+		catch(Exception $erreur)
+		{
+			echo "accès à la base impossible";
+        }
+
+        $Base->query('DELETE from user where pseudo="'.$nom.'" AND motdepasse="'.$mdp.'"'); //suppression d'une ligne dans la bdd
+        session_destroy(); //on surpprime les infos de l'utilisateur de la session actuelle
+    }
+
     public function getidprog()
     {
         return $this->_Idprog; //pour savoir quel(s) programme(s) est affilié à l'utilisateur
