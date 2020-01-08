@@ -11,7 +11,7 @@
 </head>
 
 <body>
-<h2>Choix de votre programme : </h2>
+<h2>Choisissez votre programme: </h2>
 	
 <form action="choixprogramme.php" method="POST">
 	
