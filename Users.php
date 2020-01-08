@@ -22,7 +22,7 @@ class Users
     {
         try
 		{
-			$Base =  new PDO('mysql:host=192.168.65.204; dbname=base_sportive; charset=utf8','root','root');
+			$Base =  new PDO('mysql:host=localhost; dbname=base_sportive; charset=utf8','root','root');
 		}
 		catch(Exception $erreur)
 		{
@@ -52,7 +52,7 @@ class Users
     {
         try
 		{
-			$Base =  new PDO('mysql:host=192.168.65.204; dbname=base_sportive; charset=utf8','root','root');
+			$Base =  new PDO('mysql:host=localhost; dbname=base_sportive; charset=utf8','root','root');
 		}
 		catch(Exception $erreur)
 		{

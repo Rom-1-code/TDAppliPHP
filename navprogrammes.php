@@ -2,6 +2,7 @@
 <?php require ("Users.php");?>
 
 
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -67,13 +68,15 @@
 
 <?php
 
-$quelprog;
-$quelprog = $_SESSION['tableau_users'][$indice]->getidprog();
-$pseudo_user = $_SESSION['tableau_users'][$indice]->getname();
+//$quelprog;
+
+//if(isset)
+//$quelprog = $_SESSION['tableau_users'][$indice]->getidprog();
+//$pseudo_user = $_SESSION['tableau_users'][$indice]->getname();
 
 try
 {
-	$Base =  new PDO('mysql:host=localhost; dbname=base_sportive; charset=utf8','root','');
+	$Base =  new PDO('mysql:host=localhost; dbname=base_sportive; charset=utf8','root','root');
 }
 catch(Exception $erreur)
 {

@@ -14,7 +14,7 @@
 <body>
 
 <div class="form1">
-	<h2>Inscription</h2>
+	<h2>Inscription2</h2>
 		<form action="identification.php" method="POST">
 			<label>Identifiant :</label>
 			<input type="text" name="username" required />
@@ -50,11 +50,11 @@ $_SESSION['tableau_users'] = array(); //déclaration du tableau qui contiendra t
 		{
 			try
 			{
-				$Base =  new PDO('mysql:host=192.168.65.204; dbname=base_sportive; charset=utf8','root','root');
+				$Base =  new PDO('mysql:host=localhost; dbname=base_sportive; charset=utf8','root','root');
 			}
 			catch(Exception $erreurs)
 			{
-				echo "accès à la base impossible";
+				echo "erreur à la base impossible"+$erreurs+"fin erreur";
 			}
 
 			try
