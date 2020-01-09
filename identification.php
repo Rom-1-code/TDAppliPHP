@@ -43,7 +43,7 @@ $_SESSION['indice']=1;
 $_SESSION['tableau_users'] = array(); //déclaration du tableau qui contiendra tous les utilisateurs en php
 	
 
-	if(isset($_POST['username'])&& isset($_POST['password']) && isset($_POST['password2']) &&  isset($_POST['poids']) &&  isset($_POST['taille']))
+	if(isset($_POST['username'])&& isset($_POST['password']) && isset($_POST['password2']) && isset($_POST['poids']) &&  isset($_POST['taille']))
 	{
 		if($_POST['password'] == $_POST['password2'])
 		{
