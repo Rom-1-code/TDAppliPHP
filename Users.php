@@ -71,6 +71,7 @@ class Users
         header('Location: navprogrammes.php');
     }
 
+
     public function suppressionuser($nom,$mdp)
     {
         try

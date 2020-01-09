@@ -68,13 +68,19 @@
 
 <?php
 
-$quelprog;
-$pseudo_user;
+//$quelprog;
+//$pseudo_user;
 
-if(isset($_SESSION['tableau_users'])&& isset($_SESSION['indice']))
+if(isset($_SESSION['tableau_users'])&& isset($_SESSION['indice']) && isset($_SESSION['idprog']) && isset($_SESSION['imc']) && isset($_SESSION['username']) && isset($_SESSION['password'])) 
 {
+    $_SESSION['tableau_users'][$indice] = new Users($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
+    $_SESSION['tableau_users'][$indice]->inscription($_SESSION['username'],$_SESSION['password'],$_SESSION['imc'],$_SESSION['idprog']);
+
+    
+    /*
     $quelprog = $_SESSION['tableau_users'][$indice]->getidprog();
     $pseudo_user = $_SESSION['tableau_users'][$indice]->getname();
+    */
 }
 
 
@@ -89,7 +95,7 @@ catch(Exception $erreur)
 
 try
 {
-	$idprogcourant = $Base->query('SELECT id_programme from user where pseudo="'.$pseudo_user.'"'); //on regarde quel programme correspond à l'utilisateur
+	$idprogcourant = $Base->query('SELECT id_programme from user where pseudo="'.$_SESSION['username'].'"'); //on regarde quel programme correspond à l'utilisateur
 }
 catch(Exception $erreur)
 {
