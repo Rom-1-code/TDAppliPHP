@@ -68,25 +68,28 @@
 
 <?php
 
+
+
+
+
 if(isset($_POST['Tonic'])&&!isset($_POST['Intensif'])&&!isset($_POST['Forme']))
 {
 	
 	
-	/*
-	$_SESSION['tableau_users'][$indice]= new Users($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
 	
-	$_SESSION['indice']++;
-	*/
+	//$_SESSION['tableau_users'][$indice]= new Users($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
+	
+	//$_SESSION['indice']++;
+	
 }
 
-if(isset($_POST['Intensif'])&&!isset($_POST['Tonic'])&&!isset($_POST['Forme']))
+
+if(isset($_POST['Intensif1']) && !isset($_POST['Tonic1']) && !isset($_POST['Forme1']))
 {
+	echo "coucou";
 	$_SESSION['idprog']=2; //je déclare en session la valeur idprog qui servira à l'instanciation de l'objet user dans navprogrammes
-	/*
-	$_SESSION['tableau_users'][$indice]= new Users($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
-	$_SESSION['tableau_users'][$indice]->inscription($_SESSION['username'],$_SESSION['password'],$_SESSION['imc'],2);
-	$_SESSION['indice']++;
-	*/
+	
+	
 }
 
 if(isset($_POST['Forme'])&&!isset($_POST['Intensif'])&&!isset($_POST['Tonic']))
@@ -134,7 +137,7 @@ if(!isset($_POST['Tonic'])&&isset($_POST['Intensif'])&&isset($_POST['Forme']))
 	*/
 }	
 
-//$quelprog;
+
 //$pseudo_user;
 
 //$indice;
@@ -154,16 +157,6 @@ if(isset($_POST['Tonic'])&&!isset($_POST['Intensif'])&&!isset($_POST['Forme']))
 	*/
 }
 
-if(isset($_POST['Intensif'])&&!isset($_POST['Tonic'])&&!isset($_POST['Forme']))
-{
-	$_SESSION['idprog']=2; //je déclare en session la valeur idprog qui servira à l'instanciation de l'objet user dans navprogrammes
-	
-	/*
-	$_SESSION['tableau_users'][$indice]= new Users($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
-	$_SESSION['tableau_users'][$indice]->inscription($_SESSION['username'],$_SESSION['password'],$_SESSION['imc'],2);
-	$_SESSION['indice']++;
-	*/
-}
 
 if(isset($_POST['Forme'])&&!isset($_POST['Intensif'])&&!isset($_POST['Tonic']))
 {
@@ -215,12 +208,14 @@ if(isset($_SESSION['tableau_users'])&& isset($_SESSION['indice']) && isset($_SES
 {
     $_SESSION['tableau_users'][$indice] = new Users($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
     $_SESSION['tableau_users'][$indice]->inscription($_SESSION['username'],$_SESSION['password'],$_SESSION['imc'],$_SESSION['idprog']);
+	
+	$quelprog = $_SESSION['idprog']; //on stocke l'id du programme choisi 
 
     
-    /*
-    $quelprog = $_SESSION['tableau_users'][$indice]->getidprog();
-    $pseudo_user = $_SESSION['tableau_users'][$indice]->getname();
-    */
+    
+    //$quelprog = $_SESSION['tableau_users'][$indice]->getidprog();
+    //$pseudo_user = $_SESSION['tableau_users'][$indice]->getname();
+    
 }
 
 
@@ -235,7 +230,15 @@ catch(Exception $erreur)
 
 try
 {
-	$idprogcourant = $Base->query('SELECT id_programme from user where pseudo="'.$_SESSION['username'].'"'); //on regarde quel programme correspond à l'utilisateur
+	
+	$idprogbrut = $Base->query('SELECT id_programme from user where pseudo="'.$_SESSION['username'].'"'); //on regarde quel programme correspond à l'utilisateur
+
+	while($tabid = $idprogbrut->fetch())
+	{
+		$idprogcourant = $tabid["id_programme"]; //je récupère l'id du programme choisi depuis la base (sous forme utilisable après le fetch)
+	}
+	
+	
 }
 catch(Exception $erreur)
 {

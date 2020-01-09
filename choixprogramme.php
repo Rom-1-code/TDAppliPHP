@@ -18,20 +18,20 @@
 		
 	<?php	if(25<=$_SESSION['imc'] && $_SESSION['imc']<=30)     
 			{ ?>
-				<input type="checkbox" id="tonic1" name="Tonic" value="1"  >
+				<input type="checkbox" name="Tonic1" value="Tonic"  />
 				<label for="Tonic">Tonic</label>
 	<?php	} ?>
 				<p></p>
 	<?php	if($_SESSION['imc']>=18.35 && $_SESSION['imc']<27)
 			{ ?>
-				<input type="checkbox" id="intensif1" name="Intensif" value="3" >
+				<input type="checkbox" name="Intensif1" value="Intensif" />
 				<label for="Intensif">Intensif</label>
 <?php		} ?>
 			<p></p>
 
 <?php		if($_SESSION['imc']>=16.5 && $_SESSION['imc']<26)
 			{ ?>
-				<input type="checkbox" id="forme1" name="Forme" value="2">
+				<input type="checkbox" name="Forme1" value="Forme" />
 				<label for="Forme">Forme</label>
 <?php		} ?>
 			

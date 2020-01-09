@@ -29,7 +29,6 @@ session_start();?>
                             </li>
                         </ul>
                     </div>
-
                     <!--MENU DROIT-->
 
                     <div class="menu">
