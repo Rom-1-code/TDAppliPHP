@@ -13,7 +13,7 @@
 <body>
 <h2>Choisissez votre programme: </h2>
 	
-<form action="choixprogramme.php" method="POST">
+<form action="navprogrammes.php" method="POST">
 	
 		
 	<?php	if(25<=$_SESSION['imc'] && $_SESSION['imc']<=30)     
@@ -36,87 +36,12 @@
 <?php		} ?>
 			
 				<p></p>
-			<input type="submit" />
+			<input  type="submit" value="Envoyer le formulaire"> 
 			
 			</form>
 			<p></p>
-<?php
 
-//$indice;
-//$indice = $_SESSION['indice'];
-
-
-
-
-if(isset($_POST['Tonic'])&&!isset($_POST['Intensif'])&&!isset($_POST['Forme']))
-{
-	
-	
-	/*
-	$_SESSION['tableau_users'][$indice]= new Users($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
-	
-	$_SESSION['indice']++;
-	*/
-}
-
-if(isset($_POST['Intensif'])&&!isset($_POST['Tonic'])&&!isset($_POST['Forme']))
-{
-	$_SESSION['idprog']=2; //je déclare en session la valeur idprog qui servira à l'instanciation de l'objet user dans navprogrammes
-	/*
-	$_SESSION['tableau_users'][$indice]= new Users($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
-	$_SESSION['tableau_users'][$indice]->inscription($_SESSION['username'],$_SESSION['password'],$_SESSION['imc'],2);
-	$_SESSION['indice']++;
-	*/
-}
-
-if(isset($_POST['Forme'])&&!isset($_POST['Intensif'])&&!isset($_POST['Tonic']))
-{
-	/*
-	$_SESSION['tableau_users'][$indice]= new Users($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
-	$_SESSION['tableau_users'][$indice]->inscription($_SESSION['username'],$_SESSION['password'],$_SESSION['imc'],3);
-	$_SESSION['indice']++;
-	*/
-}
-
-if(isset($_POST['Tonic'])&&isset($_POST['Intensif'])&&isset($_POST['Forme']))
-{
-	/*
-	$_SESSION['tableau_users'][$indice]= new Users($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
-	$_SESSION['tableau_users'][$indice]->inscription($_SESSION['username'],$_SESSION['password'],$_SESSION['imc'],4);
-	$_SESSION['indice']++;
-	*/
-}	
-
-if(isset($_POST['Tonic'])&&isset($_POST['Intensif'])&&!isset($_POST['Forme']))
-{
-	/*
-	$_SESSION['tableau_users'][$indice]= new Users($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
-	$_SESSION['tableau_users'][$indice]->inscription($_SESSION['username'],$_SESSION['password'],$_SESSION['imc'],5);
-	$_SESSION['indice']++;
-	*/
-}	
-
-if(isset($_POST['Tonic'])&&!isset($_POST['Intensif'])&&isset($_POST['Forme']))
-{
-	/*
-	$_SESSION['tableau_users'][$indice]= new Users($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
-	$_SESSION['tableau_users'][$indice]->inscription($_SESSION['username'],$_SESSION['password'],$_SESSION['imc'],6);
-	$_SESSION['indice']++;
-	*/
-}	
-
-if(!isset($_POST['Tonic'])&&isset($_POST['Intensif'])&&isset($_POST['Forme']))
-{
-	/*
-	$_SESSION['tableau_users'][$indice]= new Users($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
-	$_SESSION['tableau_users'][$indice]->inscription($_SESSION['username'],$_SESSION['password'],$_SESSION['imc'],7);
-	$_SESSION['indice']++;
-	*/
-}	
-	
-
-?>
-
+<?php //le formulaire est censé envoyer le programme en post à navprogramme ?>
 
 	
 </body>
