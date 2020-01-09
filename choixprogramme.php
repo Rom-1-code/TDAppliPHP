@@ -13,32 +13,32 @@
 <body>
 <h2>Choisissez votre programme: </h2>
 	
-<form action="navprogrammes.php" method="POST">
+<form action="navprogrammes.php" method="post">
 	
 		
 	<?php	if(25<=$_SESSION['imc'] && $_SESSION['imc']<=30)     
 			{ ?>
-				<input type="checkbox" name="Tonic1" value="Tonic"  />
+				<input type="checkbox" name="Tonic1" value="Tonic">
 				<label for="Tonic">Tonic</label>
 	<?php	} ?>
 				<p></p>
 	<?php	if($_SESSION['imc']>=18.35 && $_SESSION['imc']<27)
 			{ ?>
-				<input type="checkbox" name="Intensif1" value="Intensif" />
+				<input type="checkbox" name="Intensif1" value="Intensif">
 				<label for="Intensif">Intensif</label>
 <?php		} ?>
 			<p></p>
 
 <?php		if($_SESSION['imc']>=16.5 && $_SESSION['imc']<26)
 			{ ?>
-				<input type="checkbox" name="Forme1" value="Forme" />
+				<input type="checkbox" name="Forme1" value="Forme">
 				<label for="Forme">Forme</label>
 <?php		} ?>
 			
 				<p></p>
 			<input  type="submit" value="Envoyer le formulaire"> 
 			
-			</form>
+</form>
 			<p></p>
 
 <?php //le formulaire est censé envoyer le programme en post à navprogramme ?>
