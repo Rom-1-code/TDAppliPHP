@@ -71,22 +71,22 @@
 
 if(isset($_POST['Intensif1']) && !isset($_POST['Tonic1']) && !isset($_POST['Forme1']))
 {
-	echo "coucou";
-	$_SESSION['idprog']=2; //je déclare en session la valeur idprog qui servira à l'instanciation de l'objet user dans navprogrammes
-	
-	
+	$_SESSION['users']= new Users($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']); //creation du user mais il manque l'iduser et l'idprog
+	$_SESSION['users']->inscription($_SESSION['username'],$_SESSION['password'],$_SESSION['imc'],2);
+	$programme = new Programme(2);
+	$adresse = $programme->getadresse();
+
+	?> <a href= <?php echo $adresse ?>>Programme</a>
+
+	<?php
+
 }
 
 
 if(isset($_POST['Tonic'])&&!isset($_POST['Intensif'])&&!isset($_POST['Forme']))
 {
 	
-	
-	
-	//$_SESSION['tableau_users'][$indice]= new Users($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
-	
-	//$_SESSION['indice']++;
-	
+		
 }
 
 
@@ -106,6 +106,11 @@ if(isset($_POST['Tonic'])&&isset($_POST['Intensif'])&&isset($_POST['Forme']))
 	$_SESSION['tableau_users'][$indice]->inscription($_SESSION['username'],$_SESSION['password'],$_SESSION['imc'],4);
 	$_SESSION['indice']++;
 	*/
+
+//	$U1 = new Users("qsdqsdq");
+//	$U1->setProgramme("2");
+//	$P1 = $U1->getProgramme();
+
 }	
 
 if(isset($_POST['Tonic'])&&isset($_POST['Intensif'])&&!isset($_POST['Forme']))
@@ -204,11 +209,7 @@ if(!isset($_POST['Tonic'])&&isset($_POST['Intensif'])&&isset($_POST['Forme']))
 
 if(isset($_SESSION['tableau_users'])&& isset($_SESSION['indice']) && isset($_SESSION['idprog']) && isset($_SESSION['imc']) && isset($_SESSION['username']) && isset($_SESSION['password'])) 
 {
-    $_SESSION['tableau_users'][$indice] = new Users($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
-    $_SESSION['tableau_users'][$indice]->inscription($_SESSION['username'],$_SESSION['password'],$_SESSION['imc'],$_SESSION['idprog']);
-	
-	$quelprog = $_SESSION['idprog']; //on stocke l'id du programme choisi 
-
+    
     
     
     //$quelprog = $_SESSION['tableau_users'][$indice]->getidprog();
@@ -216,7 +217,7 @@ if(isset($_SESSION['tableau_users'])&& isset($_SESSION['indice']) && isset($_SES
     
 }
 
-
+/*
 try
 {
 	$Base =  new PDO('mysql:host=localhost; dbname=base_sportive; charset=utf8','root','root');
@@ -247,7 +248,7 @@ if($idprogcourant==$quelprog && $idprogcourant==2)
 {
    ?> <embed src="Musculation.pdf" width=800 height=500 type='application/pdf'/> <?php
 }
-
+*/
 ?>
 </body>
 

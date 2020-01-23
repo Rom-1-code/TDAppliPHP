@@ -1,5 +1,5 @@
 <?php
-
+//commentaire detete dev : a quoi sert la classe date 
 
 class Users
 {
@@ -10,6 +10,25 @@ class Users
     private $_Idprog;
     private $_Imc;
 
+    /*public function getProgramme(){
+
+        $p1 = new Programme($this->_Idprog);
+
+        
+
+        return $p1
+    }
+
+    public function setProgramme($idProgramm){
+
+        //requet insert Id program dans la table user
+
+        $this->_Idprog = $idProgramm;
+
+        
+    }*/
+
+
     //constructeur :
     public function __construct($newNom,$newMdp,$newimc)
     {
@@ -18,6 +37,7 @@ class Users
         $this->_Imc = $newimc;
     }
     
+    //permet de connect le user a l'application
     public function login($nom,$mdp)
     {
         try
@@ -59,14 +79,14 @@ class Users
 			echo "accès à la base impossible";
         }
         
-        $Base->query('INSERT INTO user (id_programme,imc,pseudo,motdepasse) VALUES ("'.$idprog.'","'.$imc.'","'.$nom.'","'.$mdp.'")'); //insertion d'une nouvelle ligne dans la bdd
+        $Base->query('INSERT INTO user (imc,pseudo,motdepasse) VALUES ("'.$idprog.'","'.$imc.'","'.$nom.'","'.$mdp.'")'); //insertion d'une nouvelle ligne dans la bdd
 
         $Id = $Base->query('SELECT id_user from user where pseudo="'.$nom.'" AND motdepasse="'.$mdp.'" AND imc="'.$imc.'"'); //on recupère l'id de l'utilisateur qui vient d'être crée
         $this->_Iduser=$Id;
-        $this->_Idprog=$idprog;
         $this->_Nom=$nom;
         $this->_Imc=$imc;
         $this->_Mdp=$mdp;
+        $this->_Idprog=$idprog;
         
         header('Location: navprogrammes.php');
     }
@@ -95,6 +115,11 @@ class Users
     public function getname()
     {
         return $this->_Nom; //pour savoir le nom de l'utilisateur courant
+    }
+
+    public function liaisonproguser()
+    {
+        
     }
 
 

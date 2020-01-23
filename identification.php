@@ -39,8 +39,8 @@
 <?php
 
 
-$_SESSION['indice']=1;
-$_SESSION['tableau_users'] = array(); //déclaration du tableau qui contiendra tous les utilisateurs en php
+
+$_SESSION['users']; 
 	
 
 	if(isset($_POST['username'])&& isset($_POST['password']) && isset($_POST['password2']) && isset($_POST['poids']) &&  isset($_POST['taille']))
@@ -83,21 +83,7 @@ $_SESSION['tableau_users'] = array(); //déclaration du tableau qui contiendra t
 				$_SESSION['username']=$_POST['username'];
 				$_SESSION['password']=$_POST['password'];
 				$_SESSION['imc']=$_POST['poids']/pow($_POST['taille'],2); //calcul de l'imc à partir des données du formulaire
-				  
-				//$indice=$_SESSION['indice'];
-				  
-				//$_SESSION['tableau_users'][$indice]= new Users($_POST['username'],$_POST['password'],$_SESSION['imc']);
-				//$_SESSION['tableau_users'][$indice]->inscription($_POST['username'],$_POST['password'],$_SESSION['imc']);
-				//$_SESSION['indice']++;
-				
-				
-				//$user = new Users($_POST['username'],$_POST['password'],$imc); //je cherche un moyen d'avoir un nom de variable différent à chaque création d'objet User
-				//$user->inscription($_POST['username'],$_POST['password'],$imc);
-				//$tableau_users[$indice]= new Users($_POST['username'],$_POST['password'],$imc);
-				//$tableau_users[$indice]->inscription($_POST['username'],$_POST['password'],$imc);
-				//$indice++;
-				
-
+	
 				
 				header('Location: choixprogramme.php');
 				Exit();
@@ -126,12 +112,22 @@ $_SESSION['tableau_users'] = array(); //déclaration du tableau qui contiendra t
 <?php
 if(isset($_POST['username'])&& isset($_POST['password'])){
 	
-	$_SESSION['tableau_users'][$indice]= new Users($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
-	$_SESSION['tableau_users'][$indice]->login($_POST['username'],$_POST['password']);
+	$_SESSION['users']->login($_POST['username'],$_POST['password']);
 
 }
 
-
+//test 
 ?>
+<label>choisir user:</label>
+<form action"" methode="POST">
+	<select name="listobjet" id="pet-select">
+   	 	<option value="">--Please choose an option--</option>
+    	<option value="1">Tonic</option>
+    	<option value="2">Intensif</option>
+    	<option value="3">Forme</option>
+	</select>
+</form>
+
+
 </body>
 </html>

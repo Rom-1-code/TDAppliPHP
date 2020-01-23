@@ -20,12 +20,14 @@
 			{ ?>
 				<input type="checkbox" name="Tonic1" value="Tonic">
 				<label for="Tonic">Tonic</label>
+			
 	<?php	} ?>
 				<p></p>
 	<?php	if($_SESSION['imc']>=18.35 && $_SESSION['imc']<27)
 			{ ?>
 				<input type="checkbox" name="Intensif1" value="Intensif">
 				<label for="Intensif">Intensif</label>
+				
 <?php		} ?>
 			<p></p>
 
@@ -41,7 +43,41 @@
 </form>
 			<p></p>
 
-<?php //le formulaire est censé envoyer le programme en post à navprogramme ?>
+<?php //le formulaire est censé envoyer le programme en post à navprogramme 
+
+try 
+{
+	$base = new PDO('mysql:host=localhost; dbname=base_sportive', 'root', 'root');
+	$DonneeBruteUser = $base->query("select * from user");
+	$TabUserIndex = 0;
+	
+	while ($tab = $DonneeBruteUser->fetch())
+	{ 
+		$TabUser[$TabUserIndex++] = new Users($tab['id_user'],$tab['id_programme'],$tab['imc'],$tab['pseudo'],$tab['motdepasse']);        
+	
+	}      
+}
+catch(exception$e) 
+{
+	$e->getMessage;
+
+}
+
+?>
+
+<form action="" methode="POST">
+<select name="pets"id="pet-select">
+	
+<?php  
+	  foreach($TabUser as $objetUser)
+	  {
+		  echo'<option value="'.$objetUser->getidprog().'">'.$objetUser->getname().'</option>';                
+	  }
+	  
+ ?>
+ </select><input type="submit"></input></form>
+
+
 
 	
 </body>
