@@ -13,14 +13,16 @@ class Programme
         try
         {
             $Base = new PDO('mysql:host=localhost; dbname=base_sportive; charset=utf8','root','root');
+            $adresse = $Base->query('SELECT adresse_prog from programme where id_programme="'.$id.'"');
+            $this->_adressepageprog = $adresse;
         }
         catch(Exception $erreur)
         {
             echo "pas possible de se connecter à la base";
         }
         
-        $adresse = $Base->query('SELECT adresse_prog from programme where id="'.$id.'"');
-        $this->_adressepageprog = $adresse;
+        
+        
     }
 
     
