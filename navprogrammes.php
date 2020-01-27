@@ -1,6 +1,6 @@
 <?php session_start(); ?>
 <?php require ("Users.php");?>
-
+<?php require ("Programme.php");?>
 
 
 <!DOCTYPE html>
@@ -71,12 +71,14 @@
 
 if(isset($_POST['Intensif1']) && !isset($_POST['Tonic1']) && !isset($_POST['Forme1']))
 {
-	$_SESSION['users']= new Users($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']); //creation du user mais il manque l'iduser et l'idprog
-	$_SESSION['users']->inscription($_SESSION['username'],$_SESSION['password'],$_SESSION['imc'],2);
+	echo "coucou";
+	$user1 = new Users($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']); //creation du user mais il manque l'iduser et l'idprog
+	$user1->inscription($_SESSION['username'],$_SESSION['password'],$_SESSION['imc'],2);
 	$programme = new Programme(2);
 	$adresse = $programme->getadresse();
+	
 
-	?> <a href= <?php echo $adresse ?>>Programme</a>
+	?> <a href= "<?php  $adresse ?>">Programme</a>
 
 	<?php
 

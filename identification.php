@@ -40,7 +40,7 @@
 
 
 
-$_SESSION['users']; 
+
 	
 
 	if(isset($_POST['username'])&& isset($_POST['password']) && isset($_POST['password2']) && isset($_POST['poids']) &&  isset($_POST['taille']))
@@ -84,16 +84,19 @@ $_SESSION['users'];
 				$_SESSION['password']=$_POST['password'];
 				$_SESSION['imc']=$_POST['poids']/pow($_POST['taille'],2); //calcul de l'imc à partir des données du formulaire
 	
+				?>
+					<form action="choixprogramme.php" method="post">
+		
+						<input type="submit" value="changer de page"> 
 				
-				header('Location: choixprogramme.php');
-				Exit();
+					</form>
+				<?php
+			}
+			else
+			{
+				?><div class="erreur"><p>Le mot de passe doit être identique</p></div> <?php
 			}
 		}
-		else
-		{
-			?><div class="erreur"><p>Le mot de passe doit être identique</p></div> <?php
-		}
-
 	}
 ?>
 <div class="form2">
@@ -112,7 +115,10 @@ $_SESSION['users'];
 <?php
 if(isset($_POST['username'])&& isset($_POST['password'])){
 	
-	$_SESSION['users']->login($_POST['username'],$_POST['password']);
+	
+	$user1 = new Users($_POST['username'],$_POST['password'],0);
+	$user1->login($_POST['username'],$_POST['password']);
+	$user1->SetIMC();
 
 }
 

@@ -73,13 +73,15 @@ class Users
         try
 		{
 			$Base =  new PDO('mysql:host=localhost; dbname=base_sportive; charset=utf8','root','root');
-		}
+            $Base->query('INSERT INTO user (id_programme,imc,pseudo,motdepasse) VALUES ("'.$idprog.'","'.$imc.'","'.$nom.'","'.$mdp.'")'); //insertion d'une nouvelle ligne dans la bdd
+        
+        }
 		catch(Exception $erreur)
 		{
 			echo "accès à la base impossible";
         }
         
-        $Base->query('INSERT INTO user (imc,pseudo,motdepasse) VALUES ("'.$idprog.'","'.$imc.'","'.$nom.'","'.$mdp.'")'); //insertion d'une nouvelle ligne dans la bdd
+       
 
         $Id = $Base->query('SELECT id_user from user where pseudo="'.$nom.'" AND motdepasse="'.$mdp.'" AND imc="'.$imc.'"'); //on recupère l'id de l'utilisateur qui vient d'être crée
         $this->_Iduser=$Id;
@@ -88,7 +90,7 @@ class Users
         $this->_Mdp=$mdp;
         $this->_Idprog=$idprog;
         
-        header('Location: navprogrammes.php');
+        
     }
 
 
@@ -120,6 +122,11 @@ class Users
     public function liaisonproguser()
     {
         
+    }
+
+    public function SetIMC()
+    {
+
     }
 
 

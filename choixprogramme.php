@@ -14,6 +14,7 @@
 <h2>Choisissez votre programme: </h2>
 	
 <form action="navprogrammes.php" method="post">
+
 	
 		
 	<?php	if(25<=$_SESSION['imc'] && $_SESSION['imc']<=30)     
@@ -44,7 +45,7 @@
 			<p></p>
 
 <?php //le formulaire est censé envoyer le programme en post à navprogramme 
-
+/*
 try 
 {
 	$base = new PDO('mysql:host=localhost; dbname=base_sportive', 'root', 'root');
@@ -77,7 +78,8 @@ catch(exception$e)
  ?>
  </select><input type="submit"></input></form>
 
-
+*/
+?>
 
 	
 </body>

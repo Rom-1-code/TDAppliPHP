@@ -8,6 +8,29 @@ class Programme
 
     public function __construct($id)
     {
+        $this->_idprog = $id;
+        
+        try
+        {
+            $Base = new PDO('mysql:host=localhost; dbname=base_sportive; charset=utf8','root','root');
+        }
+        catch(Exception $erreur)
+        {
+            echo "pas possible de se connecter à la base";
+        }
+        
+        $adresse = $Base->query('SELECT adresse_prog from programme where id="'.$id.'"');
+        $this->_adressepageprog = $adresse;
+    }
+
+    
+    
+
+        
+    
+    /*
+    public function __construct($id)
+    {
         try
         {
             $Base = new PDO('mysql:host=localhost; dbname=base_sportive; charset=utf8','root','root');
@@ -23,7 +46,7 @@ class Programme
         $this->_adressepageprog = $adresse;
         
     }
-
+    */
     public function syncronisewithbase()
     {
         try

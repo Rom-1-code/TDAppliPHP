@@ -72,8 +72,178 @@
 if(isset($_POST['Intensif1']) && !isset($_POST['Tonic1']) && !isset($_POST['Forme1']))
 {
 	echo "coucou";
-	$_SESSION['idprog']=2; //je déclare en session la valeur idprog qui servira à l'instanciation de l'objet user dans navprogrammes
 	
 	
 }
+
+if(isset($_POST['Tonic'])&&!isset($_POST['Intensif'])&&!isset($_POST['Forme']))
+{
+	
+		
+}
+
+
+if(isset($_POST['Forme'])&&!isset($_POST['Intensif'])&&!isset($_POST['Tonic']))
+{
+	/*
+	$_SESSION['tableau_users'][$indice]= new Users($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
+	$_SESSION['tableau_users'][$indice]->inscription($_SESSION['username'],$_SESSION['password'],$_SESSION['imc'],3);
+	$_SESSION['indice']++;
+	*/
+}
+
+if(isset($_POST['Tonic'])&&isset($_POST['Intensif'])&&isset($_POST['Forme']))
+{
+	/*
+	$_SESSION['tableau_users'][$indice]= new Users($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
+	$_SESSION['tableau_users'][$indice]->inscription($_SESSION['username'],$_SESSION['password'],$_SESSION['imc'],4);
+	$_SESSION['indice']++;
+	*/
+
+//	$U1 = new Users("qsdqsdq");
+//	$U1->setProgramme("2");
+//	$P1 = $U1->getProgramme();
+
+}	
+
+if(isset($_POST['Tonic'])&&isset($_POST['Intensif'])&&!isset($_POST['Forme']))
+{
+	/*
+	$_SESSION['tableau_users'][$indice]= new Users($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
+	$_SESSION['tableau_users'][$indice]->inscription($_SESSION['username'],$_SESSION['password'],$_SESSION['imc'],5);
+	$_SESSION['indice']++;
+	*/
+}	
+
+if(isset($_POST['Tonic'])&&!isset($_POST['Intensif'])&&isset($_POST['Forme']))
+{
+	/*
+	$_SESSION['tableau_users'][$indice]= new Users($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
+	$_SESSION['tableau_users'][$indice]->inscription($_SESSION['username'],$_SESSION['password'],$_SESSION['imc'],6);
+	$_SESSION['indice']++;
+	*/
+}	
+
+if(!isset($_POST['Tonic'])&&isset($_POST['Intensif'])&&isset($_POST['Forme']))
+{
+	/*
+	$_SESSION['tableau_users'][$indice]= new Users($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
+	$_SESSION['tableau_users'][$indice]->inscription($_SESSION['username'],$_SESSION['password'],$_SESSION['imc'],7);
+	$_SESSION['indice']++;
+	*/
+}	
+
+
+//$pseudo_user;
+
+//$indice;
+//$indice = $_SESSION['indice'];
+
+
+
+
+if(isset($_POST['Tonic'])&&!isset($_POST['Intensif'])&&!isset($_POST['Forme']))
+{
+	
+	
+	/*
+	$_SESSION['tableau_users'][$indice]= new Users($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
+	
+	$_SESSION['indice']++;
+	*/
+}
+
+
+if(isset($_POST['Forme'])&&!isset($_POST['Intensif'])&&!isset($_POST['Tonic']))
+{
+	/*
+	$_SESSION['tableau_users'][$indice]= new Users($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
+	$_SESSION['tableau_users'][$indice]->inscription($_SESSION['username'],$_SESSION['password'],$_SESSION['imc'],3);
+	$_SESSION['indice']++;
+	*/
+}
+
+if(isset($_POST['Tonic'])&&isset($_POST['Intensif'])&&isset($_POST['Forme']))
+{
+	/*
+	$_SESSION['tableau_users'][$indice]= new Users($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
+	$_SESSION['tableau_users'][$indice]->inscription($_SESSION['username'],$_SESSION['password'],$_SESSION['imc'],4);
+	$_SESSION['indice']++;
+	*/
+}	
+
+if(isset($_POST['Tonic'])&&isset($_POST['Intensif'])&&!isset($_POST['Forme']))
+{
+	/*
+	$_SESSION['tableau_users'][$indice]= new Users($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
+	$_SESSION['tableau_users'][$indice]->inscription($_SESSION['username'],$_SESSION['password'],$_SESSION['imc'],5);
+	$_SESSION['indice']++;
+	*/
+}	
+
+if(isset($_POST['Tonic'])&&!isset($_POST['Intensif'])&&isset($_POST['Forme']))
+{
+	/*
+	$_SESSION['tableau_users'][$indice]= new Users($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
+	$_SESSION['tableau_users'][$indice]->inscription($_SESSION['username'],$_SESSION['password'],$_SESSION['imc'],6);
+	$_SESSION['indice']++;
+	*/
+}	
+
+if(!isset($_POST['Tonic'])&&isset($_POST['Intensif'])&&isset($_POST['Forme']))
+{
+	/*
+	$_SESSION['tableau_users'][$indice]= new Users($_SESSION['username'],$_SESSION['password'],$_SESSION['imc']);
+	$_SESSION['tableau_users'][$indice]->inscription($_SESSION['username'],$_SESSION['password'],$_SESSION['imc'],7);
+	$_SESSION['indice']++;
+	*/
+}	
+	
+
+if(isset($_SESSION['tableau_users'])&& isset($_SESSION['indice']) && isset($_SESSION['idprog']) && isset($_SESSION['imc']) && isset($_SESSION['username']) && isset($_SESSION['password'])) 
+{
+    
+    
+    
+    //$quelprog = $_SESSION['tableau_users'][$indice]->getidprog();
+    //$pseudo_user = $_SESSION['tableau_users'][$indice]->getname();
+    
+}
+
+/*
+try
+{
+	$Base =  new PDO('mysql:host=localhost; dbname=base_sportive; charset=utf8','root','root');
+}
+catch(Exception $erreur)
+{
+	echo "accès à la base impossible";
+}
+
+try
+{
+	
+	$idprogbrut = $Base->query('SELECT id_programme from user where pseudo="'.$_SESSION['username'].'"'); //on regarde quel programme correspond à l'utilisateur
+
+	while($tabid = $idprogbrut->fetch())
+	{
+		$idprogcourant = $tabid["id_programme"]; //je récupère l'id du programme choisi depuis la base (sous forme utilisable après le fetch)
+	}
+	
+	
+}
+catch(Exception $erreur)
+{
+	echo "accès à la base impossible";
+}
+
+if($idprogcourant==$quelprog && $idprogcourant==2)
+{
+   ?> <embed src="Musculation.pdf" width=800 height=500 type='application/pdf'/> <?php
+}
+*/
+
 ?>
+</body>
+
+</html>

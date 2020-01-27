@@ -46,6 +46,13 @@ session_start();?>
 </div>
 <!-- FIN HEADER -->
 
+<div id="id">
+    bdqsbdbxcn behb nfedbfhefjdbfehbsfbjsdbejsfjndfsefisjf
+
+
+</div>
+
+<script src="js/coderom.js"></script>
 </body>
 
 </html>
