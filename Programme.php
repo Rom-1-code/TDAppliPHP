@@ -5,6 +5,7 @@ class Programme
 
     private $_idprog;
     private $_adressepageprog; //numero fourni par la base qui donnera accès à la page php contenant le programme sportif
+    private $type_programme;
 
     public function __construct($id)
     {
@@ -23,6 +24,16 @@ class Programme
         
         
         
+    }
+
+    public function settypeprog($type)
+    {
+        $this->type_programme=$type;
+    }
+
+    public function setadresse($newadresse)
+    {
+        $this->_adressepageprog=$newadresse;
     }
 
     
@@ -74,6 +85,11 @@ class Programme
     public function getadresse()
     {
         return $this->_adressepageprog;
+    }
+
+    public function getidprog()
+    {
+        return $this->_idprog;
     }
 
 

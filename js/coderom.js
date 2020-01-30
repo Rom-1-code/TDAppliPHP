@@ -1,12 +1,14 @@
-setTimeout(function() {
-    console.log("I'm here!")
-}, 5000);
+var elem = document.getElementById("id");
+var color = document.getElementsByName("rouge")
+elem.addEventListener(changeTexte());
+color.addEventListener(changeColor());
 
-console.log("Where are you?");
-var elem = document.getElementById('id');
-elem.addEventListener(changeColor());
+function changeTexte() {
+
+    elem.textContent = "bonjour";
+}
 
 function changeColor() {
 
-    elem.textContent = "bonjour";
+    elem.textContent = "bleu";
 }

@@ -1,5 +1,6 @@
 <?php session_start(); ?>
 <?php require ("Users.php");?>
+<?php require ("Programme.php");?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -117,22 +118,153 @@ if(isset($_POST['username'])&& isset($_POST['password'])){
 	
 	
 	$user1 = new Users($_POST['username'],$_POST['password'],0);
-	$user1->login($_POST['username'],$_POST['password']);
-	$user1->SetIMC();
+	$varreturn= $user1->login($_POST['username'],$_POST['password']);
+	$user1->SetIMC($_POST['username']);
 
-}
+	if($varreturn==1)
+	{
+		?> <a href="navprogrammes.php">naviguer</a> <?php
+	}
 
-//test 
-?>
-<label>choisir user:</label>
-<form action"" methode="POST">
-	<select name="listobjet" id="pet-select">
+
+
+} ?>
+
+<label>choisir programme:</label>
+<form  methode="POST">
+	<select name="listprog" id="pet-select">
    	 	<option value="">--Please choose an option--</option>
     	<option value="1">Tonic</option>
     	<option value="2">Intensif</option>
     	<option value="3">Forme</option>
 	</select>
 </form>
+
+<?php
+
+try 
+{
+	$base = new PDO('mysql:host=localhost; dbname=base_sportive', 'root', 'root');
+	$DonneeBruteUser = $base->query('SELECT * from programme');
+	$TabProg = array();
+	$TabProgIndex = 0; 
+	
+	while($tab = $DonneeBruteUser->fetch())
+	{ 
+		$TabProg[$TabProgIndex] = new Programme($tab['id_programme']);        
+		$TabProg[$TabProgIndex]->settypeprog($tab['type_programme']);
+		$TabProg[$TabProgIndex]->setadresse($tab['adresse_prog']);
+		$TabProg[$TabProgIndex++];
+	}      
+}
+catch(exception $e) 
+{
+	$e->getMessage;
+
+}
+
+
+?>
+
+<form action="" methode="POST">
+<select name="prog"id="pet-select">
+	
+<?php  
+	  foreach($TabProg as $objetProg)
+	  {
+		  echo'<option value="'.$objetProg->getidprog().'">'.$objetProg->getadresse().'</option>';                
+	  }
+	  
+ ?>
+ </select>
+ 	<input type="submit"></input>
+</form>
+<?php /*
+<label>choisir utilisateur à supprimer:</label>
+<form  methode="POST">
+	<select name="listuser" id="pet-select">
+   	 	<option value="">--Please choose an option--</option>
+    	<option value=""></option>
+    	<option value=""></option>
+    	<option value=""></option>
+	</select>
+</form>
+*/
+?>
+
+<p>choisis un utilisateur à supprimer</p>
+
+<div>
+  <input type="checkbox" id="" name="users[]"
+         checked>
+  <label for="coding">choose</label>
+</div>
+
+<?php
+
+try 
+{
+	$base = new PDO('mysql:host=localhost; dbname=base_sportive', 'root', 'root');
+	$DonneeBruteUser = $base->query('SELECT * from user');
+	$TabUser = array();
+	$TabUserIndex = 0;
+	
+	while ($tab = $DonneeBruteUser->fetch())
+	{ 
+		$TabUser[$TabUserIndex++] = new Users($tab['id_user'],$tab['pseudo']);        
+		//$TabUser[$TabUserIndex++];
+	}      
+}
+catch(exception $e) 
+{
+	$e->getMessage;
+
+}
+
+?>
+
+<form action="" methode="POST">
+
+	
+<?php  
+	  foreach($TabUser as $objetUser)
+	  {
+		  echo'<p><input type="checkbox" value="'.$objetUser->getId().'" name="users[]" />';
+		  echo '<label for="coding">'.$objetUser-> getPseudo().'</label></p>';                
+	  }
+	  
+ ?>
+ 
+ 	<input type="submit"></input>
+</form>
+
+<?php
+if (isset($_POST['users']))
+{
+	foreach($_POST['users'] as $idUser)
+	{
+		$j=0;
+		
+		foreach($TabUser as $objetUser)
+		{
+			if($objetUser->getId()== $idUser)
+			{
+				$objetUser->deleteUser();
+				unset($TabUser[$j]);
+			
+			}
+			$j++;
+		}
+		
+	}
+}
+
+$TabUser[$TabUserIndex]->suppressionuser($_POST['id']);
+
+
+?>
+
+
 
 
 </body>

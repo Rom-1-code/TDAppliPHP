@@ -4,11 +4,12 @@
 class Users
 {
     //propriété :
-    private $_Nom;
     private $_Mdp;
     private $_Iduser;
     private $_Idprog;
     private $_Imc;
+    private $_id;
+    private $_pseudo;
 
     /*public function getProgramme(){
 
@@ -30,13 +31,16 @@ class Users
 
 
     //constructeur :
-    public function __construct($newNom,$newMdp,$newimc)
-    {
-        $this->_Nom = $newNom;
-        $this->_Mdp = $newMdp;
-        $this->_Imc = $newimc;
+    public function __construct($id,$pseudo){
+        $this->_id = $id;
+        $this->_pseudo = $pseudo;
     }
-    
+    public function getId(){
+        return $this->_id;
+    }
+    public function getPseudo(){
+        return $this->_pseudo;
+    }
     //permet de connect le user a l'application
     public function login($nom,$mdp)
     {
@@ -59,7 +63,7 @@ class Users
             
         }
         if($futurtableau["pseudo"]!=$nom || $futurtableau["motdepasse"]!=$mdp);{
-            echo"Cet utilisateur n'existe pas !";
+            echo "Cet utilisateur n'existe pas !";
 		}
 	
         
@@ -94,7 +98,7 @@ class Users
     }
 
 
-    public function suppressionuser($nom,$mdp)
+    public function suppressionuser($id)
     {
         try
 		{
@@ -105,7 +109,7 @@ class Users
 			echo "accès à la base impossible";
         }
 
-        $Base->query('DELETE from user where pseudo="'.$nom.'" AND motdepasse="'.$mdp.'"'); //suppression d'une ligne dans la bdd
+        $Base->query('DELETE from user where id_user="'.$id.'"'); //suppression d'une ligne dans la bdd
         session_destroy(); //on surpprime les infos de l'utilisateur de la session actuelle
     }
 
@@ -124,9 +128,18 @@ class Users
         
     }
 
-    public function SetIMC()
+    public function SetIMC($pseudo)
     {
-
+        try
+		{
+			$Base =  new PDO('mysql:host=localhost; dbname=base_sportive; charset=utf8','root','root');
+            $newimc = $Base->query('SELECT imc from user where pseudo="'.$pseudo.'"'); //insertion d'une nouvelle ligne dans la bdd
+            $this->imc=$newimc;
+        }
+		catch(Exception $erreur)
+		{
+			echo "accès à la base impossible";
+        }     
     }
 
 
