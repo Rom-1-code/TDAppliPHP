@@ -244,7 +244,8 @@ if (isset($_POST['users']))
 	foreach($_POST['users'] as $idUser)
 	{
 		$j=0;
-		
+		$TabUser[$TabUserIndex]->suppressionuser($_POST['id']);
+
 		foreach($TabUser as $objetUser)
 		{
 			if($objetUser->getId()== $idUser)
@@ -259,7 +260,7 @@ if (isset($_POST['users']))
 	}
 }
 
-$TabUser[$TabUserIndex]->suppressionuser($_POST['id']);
+
 
 
 ?>
