@@ -46,7 +46,7 @@ session_start(); ?>
     </div>
     <!-- FIN HEADER -->
 
-   <!-- <h3>Liste déroulante</h3>
+    <h3>Liste déroulante</h3>
     <FORM action"" methode="POST">
         <select name="user" id="user-select">
             <option value="28" selected>User 1</option>
@@ -80,8 +80,9 @@ session_start(); ?>
         foreach ($TabUser as $objetUser) {
             if ($objetUser->getId() == $_POST["id_user"]) {
                 $objetUser->getPseudo() == $_POST["pseudo"];
-                echo "le user est "
+            
             }
+        
         }
     } else {
         echo "Aucun user selectionné";
@@ -110,7 +111,7 @@ session_start(); ?>
 
 <div name="rouge">
     rouge
-</div> -->
+</div>
 
     <script src="js/coderom.js"></script>
 </body>

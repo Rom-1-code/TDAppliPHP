@@ -212,7 +212,7 @@ try
 	while ($tab = $DonneeBruteUser->fetch())
 	{ 
 		$TabUser[$TabUserIndex++] = new Users($tab['id_user'],$tab['pseudo']);        
-		//$TabUser[$TabUserIndex++];
+		
 	}      
 }
 catch(exception $e) 
