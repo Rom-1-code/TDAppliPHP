@@ -1,14 +1,15 @@
 var elem = document.getElementById("id");
-var color = document.getElementsByName("rouge")
-elem.addEventListener(changeTexte());
-color.addEventListener(changeColor());
+elem.addEventListener(changeTexte(elem));
+var color = document.getElementsByName("rouge");
+color.addEventListener(changeColor(color));
 
-function changeTexte() {
+function changeTexte(elem) 
+{
 
     elem.textContent = "bonjour";
 }
 
-function changeColor() {
-
-    elem.textContent = "bleu";
+function changeColor(color) 
+{
+    color[0].textContent = "bleu";
 }

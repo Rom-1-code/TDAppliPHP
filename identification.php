@@ -195,9 +195,8 @@ catch(exception $e)
 <p>choisis un utilisateur à supprimer</p>
 
 <div>
-  <input type="checkbox" id="" name="users[]"
-         checked>
-  <label for="coding">choose</label>
+  <label></label>
+  
 </div>
 
 <?php
@@ -224,17 +223,17 @@ catch(exception $e)
 ?>
 
 <form action="" methode="POST">
-
+	
 	
 <?php  
 	  foreach($TabUser as $objetUser)
 	  {
-		  echo'<p><input type="checkbox" value="'.$objetUser->getId().'" name="users[]" />';
+		  echo'<p><input type="checkbox" value="'.$objetUser->getId().'" name="users[]" /></p>';
 		  echo '<label for="coding">'.$objetUser-> getPseudo().'</label></p>';                
 	  }
 	  
  ?>
- 
+	
  	<input type="submit"></input>
 </form>
 
