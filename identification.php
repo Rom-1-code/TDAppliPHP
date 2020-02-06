@@ -166,7 +166,7 @@ catch(exception $e)
 
 ?>
 
-<form action="" methode="POST">
+<form action method="POST">
 <select name="prog"id="pet-select">
 	
 <?php  
@@ -179,25 +179,10 @@ catch(exception $e)
  </select>
  	<input type="submit"></input>
 </form>
-<?php /*
-<label>choisir utilisateur à supprimer:</label>
-<form  methode="POST">
-	<select name="listuser" id="pet-select">
-   	 	<option value="">--Please choose an option--</option>
-    	<option value=""></option>
-    	<option value=""></option>
-    	<option value=""></option>
-	</select>
-</form>
-*/
-?>
 
 <p>choisis un utilisateur à supprimer</p>
 
-<div>
-  <label></label>
-  
-</div>
+
 
 <?php
 
@@ -222,14 +207,14 @@ catch(exception $e)
 
 ?>
 
-<form action="" methode="POST">
+<form action method="POST">
 	
 	
 <?php  
 	  foreach($TabUser as $objetUser)
 	  {
 		  echo'<p><input type="checkbox" value="'.$objetUser->getId().'" name="users[]" /></p>';
-		  echo '<label for="coding">'.$objetUser-> getPseudo().'</label></p>';                
+		  echo '<label for="coding">'.$objetUser->getPseudo().'</label></p>';                
 	  }
 	  
  ?>
